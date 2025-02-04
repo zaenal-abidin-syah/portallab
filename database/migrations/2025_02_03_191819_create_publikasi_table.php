@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('link_scopus', 255)->nullable();
             $table->string('link_googleScholar', 255)->nullable();
             $table->string('link_sinta', 255)->nullable();
+	    $table->string('link_garuda', 255)->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
