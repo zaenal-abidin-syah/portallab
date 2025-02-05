@@ -43,7 +43,7 @@
               <div class="flex-none w-auto max-w-full px-3 my-auto">
               @if($kepalaLaboratorium)
                   <h5 class="mb-1 dark:text-white">{{ $kepalaLaboratorium->nama }}</h5>
-                  <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm"> {{ $kepalaLaboratorium->jabatanSaatIni->first()->jabatan->jabatan }}</p>
+                  <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm"> Koordinator Laboratorium {{ $kepalaLaboratorium->laboratorium->nama_lab }}</p>
               @else
                   <p>Kepala Laboratorium: Belum ditentukan</p>
               @endif

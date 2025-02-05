@@ -18,7 +18,7 @@
                 <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
                     <form action="{{ route('lab') }}" method="POST" class="text-center">
                         @csrf
-                        <input type="hidden" name="id_lab" value="3">
+                        <input type="hidden" name="id_lab" value="1">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/TIA.png') }}" alt="Lab. Teknologi Informasi dan Aplikasi" class="w-full h-auto rounded-xl">
                         </button>
@@ -29,7 +29,7 @@
                 <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
                     <form action="{{ route('lab') }}" method="POST" class="text-center">
                         @csrf
-                        <input type="hidden" name="id_lab" value="4">
+                        <input type="hidden" name="id_lab" value="1">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/CC.png') }}" alt="Lab. Common Computing" class="w-full h-auto rounded-xl">
                         </button>
@@ -40,7 +40,7 @@
                 <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
                     <form action="{{ route('lab') }}" method="POST" class="text-center">
                         @csrf
-                        <input type="hidden" name="id_lab" value="5">
+                        <input type="hidden" name="id_lab" value="3">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/MM.png') }}" alt="Lab. Multimedia Computing" class="w-full h-auto rounded-xl">
                         </button>
@@ -51,7 +51,7 @@
                 <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
                     <form action="{{ route('lab') }}" method="POST" class="text-center">
                         @csrf
-                        <input type="hidden" name="id_lab" value="6">
+                        <input type="hidden" name="id_lab" value="4">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/SISTER.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full h-auto rounded-xl">
                         </button>

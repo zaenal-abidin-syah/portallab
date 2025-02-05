@@ -7,6 +7,7 @@ use App\Models\Buku_lab;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Buku extends Model
 {
@@ -24,12 +25,12 @@ class Buku extends Model
     }
 
     // untuk menampilkan di form (view)
-    public function penulis()
+    public function penulis(): BelongsToMany
     {
         return $this->belongsToMany(Dosen::class, 'buku_penulis', 'id_buku', 'id_dosen');
     }
 
-    public function lab()
+    public function lab(): BelongsToMany
     {
         return $this->belongsToMany(Laboratorium::class, 'buku_lab', 'id_buku', 'id_lab');
     }
