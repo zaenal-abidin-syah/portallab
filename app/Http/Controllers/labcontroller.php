@@ -29,16 +29,7 @@ class labcontroller extends Controller
             ->whereHas('dosen_jabatan', function (Builder $query) {
                 $query->where('id_jabatan', 2);
             })
-            // ->whereHa
             ->first();
-
-        // $dj = Dosen_jabatan::with(['dosen'])
-        //     ->whereHas('dosen', fn(Builder $q) => $q->where('id_lab', 2))
-        //     ->where('id_jabatan', 2)
-        //     ->get();
-        // dd($lab);
-
-        // dd($kepalaLaboratorium);
 
         if ($lab) {
             return view('lab', compact('lab', 'kepalaLaboratorium'));
