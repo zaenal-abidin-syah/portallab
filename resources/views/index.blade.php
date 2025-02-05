@@ -29,7 +29,7 @@
                 <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
                     <form action="{{ route('lab') }}" method="POST" class="text-center">
                         @csrf
-                        <input type="hidden" name="id_lab" value="1">
+                        <input type="hidden" name="id_lab" value="2">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/CC.png') }}" alt="Lab. Common Computing" class="w-full h-auto rounded-xl">
                         </button>
