@@ -23,7 +23,7 @@
   {{-- end row 1 --}}
 
   <!-- cards row 2 -->
-    <div class="flex flex-wrap mt-6 -mx-3">
+    <div class="flex flex-wrap mt-6 -mx-3 mb-6">
       {{-- column 1 --}}
       <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
         <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
@@ -81,22 +81,87 @@
       {{-- end column 2 --}}
     </div>
   {{-- end cards row 2 --}}
+  <div class="relative w-full mb-6 mx-auto">
 
-  <!-- cards row 3 -->
-    <div class="flex flex-wrap justify-end mt-6 -mx-3">
-      {{-- column 1 --}}
-      <div class="w-full max-w-full px-3 mt-0 mb-6 lg:w-7/12 lg:flex-none">
-        <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
-          <div class="flex-auto p-4">
-            <p>Daftar mata kuliah pada laboratorium {{ $lab->nama_lab }}:</p>
-            @foreach($lab->mata_kuliah as $matkul)
-            <ul>
-              <li>{{$matkul->nama_matKul}}</li>
-            </ul>
-            @endforeach
+    <div class="relative flex flex-col flex-auto min-w-0 p-4 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
+      <div class="flex flex-wrap -mx-3">
+
+        <div class="flex-none w-auto max-w-full px-3 my-auto">
+          <div class="h-full">
+            <h4 id="Fasilitas" class="mb-1 dark:text-white">Mata Kuliah</h4>
+            {{-- <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm">Public Relations</p> --}}
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3">
+    <div class="flex-none w-full max-w-full px-3">
+      <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+        @php
+          $bulan = now()->month;
+          $tahun = now()->year;
+          
+          if ($bulan >= 2 && $bulan <= 7) {
+              $semester = 'Genap';
+              $tahunAjaran = ($tahun - 1) . '-' . $tahun;
+          } else {
+              $semester = 'Ganjil';
+              $tahunAjaran = $tahun . '-' . ($tahun + 1);
+          }
+        @endphp
+        <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+          <h6 class="dark:text-white">Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}</h6>
+        </div>
+        <div class="flex-auto px-0 pt-0 pb-2">
+          <div class="p-0 overflow-x-auto">
+            
+              {{-- <p>Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}:</p> --}}
+              
+            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+              <thead class="align-bottom">
+                <tr>
+                  <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Kuliah</th>
+                  <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun Ajaran</th>
+                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Semester</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($lab->mata_kuliah as $matkul)
+                <tr>
+                  <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                    <div class="flex px-2 py-1">
+                      <div class="flex flex-col justify-center">
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$matkul->nama_matKul}}</h6>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$matkul->tahun_ajaran_1 . "/" . $matkul->tahun_ajaran_2}}</span>
+                  </td>
+                  <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$matkul->semester}}</p>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+
+
+  <div class="flex flex-wrap w-full mt-6 -mx-3">
+    {{-- column 1 --}}
+      <div class="w-full max-w-full px-3 mt-0 mb-6 lg:w-7/12 lg:flex-none">
+    <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
+      
+    </div>
+  </div>
       {{-- end column 1 --}}
       {{-- column 2 --}}
       {{-- <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
