@@ -88,7 +88,7 @@
       <div class="w-full max-w-full px-3 mt-0 mb-6 lg:w-7/12 lg:flex-none">
         <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
           <div class="flex-auto p-4">
-            <p>Daftar mata kuliah peminatan pada laboratorium {{ $lab->nama_lab }}:</p>
+            <p>Daftar mata kuliah pada laboratorium {{ $lab->nama_lab }}:</p>
             @foreach($lab->mata_kuliah as $matkul)
             <ul>
               <li>{{$matkul->nama_matKul}}</li>
