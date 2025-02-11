@@ -9,8 +9,6 @@
   </div>
 
   <div class="flex flex-wrap -mx-3">
-    
-
     <div class="flex justify-center px-3 w-full md:w-4/12">
       <div class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
         <div class="border border-gray-200 dark:border-slate-700 shadow-lg rounded-xl bg-white dark:bg-slate-800">
