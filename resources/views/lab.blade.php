@@ -259,9 +259,7 @@
                 <tr>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Publikasi</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Terbit</th>
-                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link Scopus</th>
-                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link Google Scholar</th>
-                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link Sinta</th>
+                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link Publikasi</th>
                 </tr>
               </thead>
               <tbody>
@@ -277,14 +275,25 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$publikasi->tanggal}}</span>
                   </td>
-                  <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->link_scopus}}</p>
-                  </td>
-                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->link_googleScholar}}</p>
-                  </td>
-                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->link_sinta}}</p>
+                  <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">
+                      @if ($publikasi->link_googleScholar)
+                        <a href="{{$publikasi->link_googleScholar}}" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 rounded-lg text-xs px-3 py-2 text-center mx-1">
+                          Scholar
+                        </a>
+                      @endif
+                      @if ($publikasi->link_scopus)
+                        <a href="{{$publikasi->link_scopus}}" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 rounded-lg text-xs px-3 py-2 text-center mx-1">
+                          Scopus
+                        </a>
+                      @endif
+                      @if ($publikasi->link_garuda)
+                        <a href="{{$publikasi->link_garuda}}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-xs px-3 py-2 text-center mx-1">
+                          Garuda
+                        </a>
+                      @endif
+                 
+                    </p>
                   </td>
                 </tr>
                 @endforeach

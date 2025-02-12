@@ -12,18 +12,11 @@
     <div class="flex justify-center px-3 w-full md:w-4/12">
       <div class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
         <div class="border border-gray-200 dark:border-slate-700 shadow-lg rounded-xl bg-white dark:bg-slate-800">
-          <div class="p-6 text-center">
-            <!-- Foto Profil -->
-            <div class="mx-auto mb-4 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 overflow-hidden rounded-full">
-              <img 
-                src="{{ URL::asset("storage/$dosen->foto") }}" 
-                class="w-full h-24 object-cover"
-                alt="profile image"
-              >
-            </div>
+          <div class="p-6 text-center flex flex-col items-center">
+            <img class="w-16 h-16 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="{{ URL::asset("storage/$dosen->foto") }}" alt="Bordered avatar">
             
             <!-- Informasi Dosen -->
-            <h3 class="text-xl font-semibold text-slate-700 dark:text-white">{{ $dosen->nama }}</h3>
+            <h3 class="text-xl mt-5 font-semibold text-slate-700 dark:text-white">{{ $dosen->nama }}</h3>
             <p class="text-sm text-gray-500 dark:text-gray-300">NIP: {{ $dosen->nip }}</p>
             <p class="mt-2 text-sm text-blue-500">{{ $dosen->email }}</p>
           </div>

@@ -4,8 +4,14 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
-        "./resources/views/vendor/pagination*.blade.php",
+        "./resources/views/vendor/pagination/*.blade.php",
     ],
-    theme: {},
+    theme: {
+        screens: {
+            sm: "576px",
+            md: "960px",
+            lg: "1440px",
+        },
+    },
     plugins: [],
 };
