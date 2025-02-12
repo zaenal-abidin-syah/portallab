@@ -55,9 +55,25 @@ class labcontroller extends Controller
             ->whereHas('fasilitas_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
             ->latest()
             ->paginate(10, ['*'], 'facilities_page')->withQueryString();
+
+        $bulan = now()->month;
+        $tahun = now()->year;
+
+        if ($bulan >= 2 && $bulan <= 7) {
+            $semester = 'Genap';
+            $tahunAjaran = ($tahun - 1);
+        } else {
+            $semester = 'Ganjil';
+            $tahunAjaran = $tahun;
+        }
+
         $matakuliah_lab = Mata_kuliah::where('id_lab', $id_lab)
+            ->where('tahun_ajaran_1', strval($tahunAjaran))
+            ->where('tahun_ajaran_2', strval($tahunAjaran + 1))
+            ->where('semester', $semester)
             ->latest()
             ->paginate(10, ['*'], 'courses_page')->withQueryString();
+
         $pengabdian_lab = Pengabdian::where('id_lab', $id_lab)
             ->latest()
             ->paginate(10, ['*'], 'dedications_page')->withQueryString();

@@ -89,7 +89,6 @@
         <div class="flex-none w-auto max-w-full px-3 my-auto">
           <div class="h-full">
             <h4 id="Matakuliah" class="mb-1 dark:text-white">Mata Kuliah</h4>
-            {{-- <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm">Public Relations</p> --}}
           </div>
         </div>
     
@@ -130,7 +129,7 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$matkul->nama_matKul}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ucwords($matkul->nama_matKul)}}</h6>
                       </div>
                     </div>
                   </td>
@@ -258,7 +257,7 @@
               <thead class="align-bottom">
                 <tr>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Publikasi</th>
-                  <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Terbit</th>
+                  <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun Terbit</th>
                   <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link Publikasi</th>
                 </tr>
               </thead>
@@ -268,7 +267,7 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$publikasi->judul_publikasi}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ucwords($publikasi->judul_publikasi)}}</h6>
                       </div>
                     </div>
                   </td>
@@ -292,7 +291,6 @@
                           Garuda
                         </a>
                       @endif
-                 
                     </p>
                   </td>
                 </tr>
@@ -344,7 +342,7 @@
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Buku</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Laboratorium</th>
                   <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Penulis</th>
-                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Terbit</th>
+                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun Terbit</th>
                 </tr>
               </thead>
               <tbody>
@@ -354,7 +352,7 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$buku->judul_buku}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ucwords($buku->judul_buku)}}</h6>
                       </div>
                     </div>
                   </td>
@@ -433,7 +431,7 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$riset->judul_riset}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ucwords($riset->judul_riset)}}</h6>
                       </div>
                     </div>
                   </td>
@@ -496,7 +494,7 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$pengabdian->judul_pengabdian}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ucwords($pengabdian->judul_pengabdian)}}</h6>
                       </div>
                     </div>
                   </td>
@@ -569,7 +567,7 @@
                     </div>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$kegiatan->nama_kegiatan}}</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{ucwords($kegiatan->nama_kegiatan)}}</p>
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$kegiatan->tanggal}}</span>
