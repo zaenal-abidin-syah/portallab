@@ -88,7 +88,7 @@
 
         <div class="flex-none w-auto max-w-full px-3 my-auto">
           <div class="h-full">
-            <h4 id="Fasilitas" class="mb-1 dark:text-white">Mata Kuliah</h4>
+            <h4 id="Matakuliah" class="mb-1 dark:text-white">Mata Kuliah</h4>
             {{-- <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm">Public Relations</p> --}}
           </div>
         </div>
@@ -114,12 +114,9 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
+        <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
-            
-              {{-- <p>Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}:</p> --}}
-              
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table class="items-center w-full mb-3 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Kuliah</th>
@@ -128,7 +125,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->mata_kuliah as $matkul)
+                @foreach ($matakuliah_lab as $matkul)
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
@@ -148,6 +145,11 @@
               </tbody>
             </table>
           </div>
+          <div class="flex justify-end pt-5">
+              <nav>
+                  {{ $matakuliah_lab->links() }}
+              </nav>
+          </div>
         </div>
       </div>
     </div>
@@ -162,20 +164,7 @@
       
     </div>
   </div>
-      {{-- end column 1 --}}
-      {{-- column 2 --}}
-      {{-- <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
-        <div class="border-black/12.5 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
-          <div class="flex-auto p-4">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error dolorum, dolorem eos cumque magni perspiciatis, atque praesentium vero mollitia veniam laboriosam omnis consequuntur rem. Hic alias molestias numquam assumenda dolore?</p>
-          </div>
-        </div>
-      </div> --}}
-      {{-- end column 2 --}}
     </div>
-  {{-- end cards row 3 --}}
-
-  {{-- row 4 --}}
   <div class="relative w-full mb-6 mx-auto">
 
     <div class="relative flex flex-col flex-auto min-w-0 p-4 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
@@ -200,8 +189,8 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Tabel Fasilitas</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
-          <div class="p-0 overflow-x-auto">
+        <div class="flex-auto px-5 pb-5 pt-0">
+          <div class="py-0 px-5 overflow-x-auto">
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
@@ -210,23 +199,28 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->fasilitas_lab as $fasilitas)
+                @foreach ($fasilitas_lab as $fasilitas)
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$fasilitas->fasilitas->nama_fasilitas}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$fasilitas->nama_fasilitas}}</h6>
                       </div>
                     </div>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$fasilitas->jumlah}}</span>
+                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$fasilitas->fasilitas_lab[0]->jumlah}}</span>
                   </td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
           </div>
+          <div class="flex justify-end pt-5">
+            <nav>
+                {{ $fasilitas_lab->links() }}
+            </nav>
+        </div>
         </div>
       </div>
     </div>
@@ -258,9 +252,9 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Tabel Publikasi</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
-          <div class="p-0 overflow-x-auto">
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+        <div class="flex-auto px-5 pb-5 pt-0">
+          <div class="py-0 px-5 overflow-x-auto">
+            <table class="items-center w-full mb-4 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Publikasi</th>
@@ -271,32 +265,37 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->publikasi_lab as $publikasi)
+                @foreach ($publikasi_lab as $publikasi)
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$publikasi->publikasi->judul_publikasi}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$publikasi->judul_publikasi}}</h6>
                       </div>
                     </div>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$publikasi->publikasi->tanggal}}</span>
+                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$publikasi->tanggal}}</span>
                   </td>
                   <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->publikasi->link_scopus}}</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->link_scopus}}</p>
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->publikasi->link_googleScholar}}</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->link_googleScholar}}</p>
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->publikasi->link_sinta}}</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$publikasi->link_sinta}}</p>
                   </td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
           </div>
+        <div class="flex justify-end pt-5">
+          <nav>
+              {{ $publikasi_lab->links() }}
+          </nav>
+        </div>
         </div>
       </div>
     </div>
@@ -328,7 +327,7 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Buku lab</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
+        <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
@@ -340,21 +339,22 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->buku_lab as $buku)
+                @foreach ($buku_lab as $buku)
+                {{-- @dd() --}}
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$buku->buku->judul_buku}}</h6>
+                        <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$buku->judul_buku}}</h6>
                       </div>
                     </div>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$buku->laboratorium->nama_lab}}</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$buku->buku_lab[0]->laboratorium->nama_lab}}</p>
                   </td>
                   <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     {{-- $buku_penulis = buku_penulis::whereIn('id_buku', $buku->id_buku)->get(['id_dosen']); --}}
-                    @foreach ($buku->buku->buku_penulis as $penulis)
+                    @foreach ($buku->buku_penulis as $penulis)
                     <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$penulis->dosen->nama}}</span>
                     @endforeach
                     {{-- @foreach ($buku_penulis as $penulis)
@@ -366,13 +366,18 @@
                     
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$buku->buku->tanggal}}</span>
+                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$buku->tanggal}}</span>
                   </td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
           </div>
+          <div class="flex justify-end pt-5">
+            <nav>
+                {{ $buku_lab->links() }}
+            </nav>
+        </div>
         </div>
       </div>
     </div>
@@ -404,7 +409,7 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Tabel Riset</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
+        <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
@@ -414,7 +419,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->riset as $riset)
+                @foreach ($riset_lab as $riset)
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
@@ -431,6 +436,11 @@
               </tbody>
             </table>
           </div>
+          <div class="flex justify-end pt-5">
+            <nav>
+                {{ $riset_lab->links() }}
+            </nav>
+        </div>
         </div>
       </div>
     </div>
@@ -462,7 +472,7 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Tabel Pengabdian</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
+        <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
@@ -472,7 +482,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->pengabdian as $pengabdian)
+                @foreach ($pengabdian_lab as $pengabdian)
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
@@ -489,6 +499,11 @@
               </tbody>
             </table>
           </div>
+          <div class="flex justify-end pt-5">
+            <nav>
+                {{ $pengabdian_lab->links() }}
+            </nav>
+        </div>
         </div>
       </div>
     </div>
@@ -520,7 +535,7 @@
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Tabel Kegiatan</h6>
         </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
+        <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
@@ -532,7 +547,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($lab->kegiatan_lab as $kegiatan)
+                @foreach ($kegiatan_lab as $kegiatan)
                 <tr>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
@@ -566,6 +581,11 @@
               </tbody>
             </table>
           </div>
+          <div class="flex justify-end pt-5">
+            <nav>
+                {{ $kegiatan_lab->links() }}
+            </nav>
+        </div>
         </div>
       </div>
     </div>

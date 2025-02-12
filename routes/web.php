@@ -38,4 +38,4 @@ Route::get('/index', function () {
 Route::post('/dosendetail', [dosencontroller::class, 'detail'])->name('dosendetail');
 Route::post('/kegiatandetail', [kegiatancontroller::class, 'detail'])->name('kegiatandetail');
 Route::get('/dosen', [dosencontroller::class, 'show'])->name('dosen');
-Route::post('/laboratorium', [labcontroller::class, 'show'])->name('lab');
+Route::get('/laboratorium', [labcontroller::class, 'show'])->name('lab');

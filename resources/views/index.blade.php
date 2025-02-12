@@ -16,9 +16,8 @@
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3">
                 <!-- Card 1 -->
                 <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition">
-                    <form action="{{ route('lab') }}" method="POST" class="text-center">
-                        @csrf
-                        <input type="hidden" name="id_lab" value="1">
+                    <form action="{{ route('lab') }}" method="GET" class="text-center">
+                        <input type="hidden" name="slug" value="teknologi-informasi-dan-aplikasi">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/TIA.png') }}" alt="Lab. Teknologi Informasi dan Aplikasi" class="w-full h-28 lg:h-32 object-contain rounded-xl">
                         </button>
@@ -27,9 +26,8 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition">
-                    <form action="{{ route('lab') }}" method="POST" class="text-center">
-                        @csrf
-                        <input type="hidden" name="id_lab" value="2">
+                    <form action="{{ route('lab') }}" method="GET" class="text-center">
+                        <input type="hidden" name="slug" value="common-computing">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/CC.png') }}" alt="Lab. Common Computing" class="w-full h-28 lg:h-32 object-contain rounded-xl">
                         </button>
@@ -38,9 +36,8 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition">
-                    <form action="{{ route('lab') }}" method="POST" class="text-center">
-                        @csrf
-                        <input type="hidden" name="id_lab" value="3">
+                    <form action="{{ route('lab') }}" method="GET" class="text-center">
+                        <input type="hidden" name="slug" value="multimedia">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/MM.png') }}" alt="Lab. Multimedia Computing" class="w-full h-28 lg:h-32 object-contain rounded-xl">
                         </button>
@@ -49,9 +46,8 @@
 
                 <!-- Card 4 -->
                 <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition">
-                    <form action="{{ route('lab') }}" method="POST" class="text-center">
-                        @csrf
-                        <input type="hidden" name="id_lab" value="4">
+                    <form action="{{ route('lab') }}" method="GET" class="text-center">
+                        <input type="hidden" name="slug" value="sistem-terdistribusi">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/SISTER.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full h-28 lg:h-32 object-contain rounded-xl">
                         </button>
