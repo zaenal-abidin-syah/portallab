@@ -4165,23 +4165,32 @@ h6 {
         padding-right: 1rem;
     }
     .paginate {
-        display: flex;
+        display: flex !important;
+        /* visibility: visible; */
+    }
+    /* .paginate-visible{
         visibility: visible;
     }
-    .simple-paginate {
-        display: none;
+    .paginate-hidden{
         visibility: hidden;
+    } */
+    .simple-paginate {
+        display: none !important;
+        /* visibility: hidden; */
     }
 }
 
 @media (max-width: 768px) {
-    .simple-paginate {
-        display: flex;
+    /* .paginate-visible{
         visibility: visible;
+    } */
+    .simple-paginate {
+        display: flex !important;
+        /* visibility: visible; */
     }
     .paginate {
-        display: none;
-        visibility: hidden;
+        display: none !important;
+        /* visibility: hidden; */
     }
     .md-max\:w-full {
         width: 100%;

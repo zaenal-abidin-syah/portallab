@@ -22,7 +22,7 @@
             @endif
         </div>
 
-        <div class="flex justify-end paginate">
+        <div class="hidden justify-end paginate">
             <div class="">
                 <span class="relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
                     {{-- Previous Page Link --}}
