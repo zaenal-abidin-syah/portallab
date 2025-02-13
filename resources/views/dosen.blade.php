@@ -48,8 +48,8 @@
                   </td>
                   <td class="px-4 py-3">{{$dosen->nip}}</td>
                   <td class="px-4 py-3">{{$dosen->email}}</td>
-                  <td class="px-4 py-3 text-center">{{$dosen->jenjang}}, {{$dosen->universitas}}</td>
-                  <td class="px-4 py-3 text-center">
+                  <td class="px-4 py-3">{{$dosen->jenjang}}, {{$dosen->universitas}}</td>
+                  <td class="px-4 py-3">
                     @if($dosen->jabatanTerakhir)
                       {{ $dosen->jabatanTerakhir->jabatan->jabatan }}
                     @else
