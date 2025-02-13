@@ -277,17 +277,17 @@
                   <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">
                       @if ($publikasi->link_googleScholar)
-                        <a href="{{$publikasi->link_googleScholar}}" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 rounded-lg text-xs px-3 py-2 text-center mx-1">
+                        <a href="{{$publikasi->link_googleScholar}}" class="gscholar-button px-2 py-0 mx-1">
                           Scholar
                         </a>
                       @endif
                       @if ($publikasi->link_scopus)
-                        <a href="{{$publikasi->link_scopus}}" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 rounded-lg text-xs px-3 py-2 text-center mx-1">
+                        <a href="{{$publikasi->link_scopus}}" class="scopus-button px-2 py-0 mx-1">
                           Scopus
                         </a>
                       @endif
                       @if ($publikasi->link_garuda)
-                        <a href="{{$publikasi->link_garuda}}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-xs px-3 py-2 text-center mx-1">
+                        <a href="{{$publikasi->link_garuda}}" class="garuda-button px-2 py-0 mx-1">
                           Garuda
                         </a>
                       @endif
