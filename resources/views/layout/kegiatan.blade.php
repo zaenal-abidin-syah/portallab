@@ -21,6 +21,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <title>LAB Teknik Informatika</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @include('layout.partial.link')
   </head>
 
