@@ -4166,18 +4166,22 @@ h6 {
     }
     .paginate {
         display: flex;
+        visibility: visible;
     }
     .simple-paginate {
         display: none;
+        visibility: hidden;
     }
 }
 
 @media (max-width: 768px) {
     .simple-paginate {
         display: flex;
+        visibility: visible;
     }
     .paginate {
         display: none;
+        visibility: hidden;
     }
     .md-max\:w-full {
         width: 100%;
