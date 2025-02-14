@@ -26,7 +26,7 @@
 
 
     <!-- Details Section -->
-    <div class="w-full max-w-full md:w-7/12 rounded-xl bg-white dark:bg-slate-800 p-6">
+    <div class="w-full max-w-full md:w-7/12 shadow-lg rounded-xl bg-white dark:bg-slate-800 p-6">
       <div class="">
         
         <!-- Informasi Dosen -->
