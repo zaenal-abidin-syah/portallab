@@ -3,9 +3,9 @@
 
 <!-- Main Container -->
 <div class="h-full w-full px-4 py-4 mx-auto bg-gray-100">
-    <div class="flex">
+    <div class="flex justify-center items-center">
         <!-- Main Content Section -->
-        <div class="w-full md:w-3/4 px-2">
+        <div class="w-full px-2">
             <!-- Title Section -->
             <div class="text-center mb-4">
                 <h1 class="text-2xl font-bold text-blue-600">Laboratorium Teknik Informatika UTM</h1>
@@ -13,7 +13,7 @@
             </div>
 
             <!-- Cards Section -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <!-- Card 1 -->
                 <div class="bg-white shadow-lg rounded-xl px-2 pt-2 pb0 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
