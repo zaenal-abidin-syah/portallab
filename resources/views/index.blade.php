@@ -29,7 +29,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
                         <input type="hidden" name="slug" value="common-computing">
                         <button type="submit" class="w-full">
-                            <img src="{{ asset('assets/img/CC.png') }}" alt="Lab. Common Computing" class="w-full rounded-xl object-contain">
+                            <img src="{{ asset('assets/img/CC.jpeg') }}" alt="Lab. Common Computing" class="w-full rounded-xl object-contain">
                         </button>
                     </form>
                 </div>
