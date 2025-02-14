@@ -35,6 +35,7 @@
 
     </main>
     @include('layout.partial.footer')
+    {{-- @vite(['resources/js/app.js']) --}}
   </body>
-  @include('layout.partial.script')
+  {{-- @include('layout.partial.script') --}}
 </html>

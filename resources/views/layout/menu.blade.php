@@ -35,6 +35,6 @@
 
     </main>
     @include('layout.partial.footer')
+    @include('layout.partial.script')
   </body>
-  @include('layout.partial.script')
 </html>
