@@ -3,22 +3,22 @@
 <div class="w-full px-12 py-6 mx-auto">
 
   <!-- Header Section -->
-  <div class="mb-8">
-    <h1 class="text-2xl font-bold text-slate-700 dark:text-white">Detail Informasi Dosen</h1>
-    <p class="text-sm text-gray-500 dark:text-gray-300">Informasi lengkap mengenai dosen dan detail akademik.</p>
+  <div class="md:mb-8 mb-4">
+    <h1 class="text-2xl font-bold text-slate-100 dark:text-white">Detail Informasi Dosen</h1>
+    <p class="text-sm text-slate-200 dark:text-slate-300">Informasi lengkap mengenai dosen dan detail akademik.</p>
   </div>
 
-  <div class="flex flex-wrap -mx-3 gap-2 ">
+  <div class="flex flex-wrap -mx-3 gap-2 md:gap-3">
     <div class="flex justify-center items-center w-full md:w-4/12 shadow-lg rounded-xl mr-2 bg-white dark:bg-slate-800">
       <div class="w-full">
         <div class="">
-          <div class="p-6 text-center flex flex-col items-center">
-            <img class="w-48 h-48 p-1 rounded-full ring-4 ring-white shadow-lg shadow-gray-600  dark:ring-gray-500" src="{{ URL::asset("storage/$dosen->foto") }}" alt="Bordered avatar">
+          <div class="p-4 md:p-6 text-center flex flex-col items-center">
+            <img class="w-32 h-32 md:w-48 md:h-48 p-1 rounded-full ring-4 ring-white shadow-lg shadow-slate-600  dark:ring-slate-500" src="{{ URL::asset("storage/$dosen->foto") }}" alt="Bordered avatar">
             
             <!-- Informasi Dosen -->
-            <h3 class="text-2xl mt-8 font-semibold text-slate-700 dark:text-white">{{ $dosen->nama }}</h3>
-            <p class="text-xl text-gray-500 dark:text-gray-300">NIP: {{ $dosen->nip }}</p>
-            <p class="mt-2 text-lg italic text-blue-500">{{ $dosen->email }}</p>
+            <h3 class="text-lg md:text-2xl mt-2 md:mt-4 font-semibold text-slate-700 dark:text-white">{{ $dosen->nama }}</h3>
+            <p class="text-sm md:text-xl text-slate-500 dark:text-slate-300">NIP: {{ $dosen->nip }}</p>
+            <p class="text-sm md:text-xl italic text-blue-500">{{ $dosen->email }}</p>
           </div>
         </div>
       </div>
@@ -26,67 +26,61 @@
 
 
     <!-- Details Section -->
-    <div class="w-full max-w-full md:w-7/12 rounded-xl bg-white dark:bg-slate-800 p-8">
+    <div class="w-full max-w-full md:w-7/12 rounded-xl bg-white dark:bg-slate-800 p-6">
       <div class="">
         
         <!-- Informasi Dosen -->
-        <h2 class="text-lg font-bold text-slate-700 dark:text-white mb-4">Informasi Dosen</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {{-- <h2 class="text-sm md:text-xl font-bold text-slate-800 dark:text-white">Informasi Dosen</h2> --}}
+        {{-- <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
           <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nama</label>
-            <input readonly type="text" value="{{ $dosen->nama }}" class="mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+            <span class="block text-sm font-semibold text-slate-800 dark:text-slate-300">Nama</span>
+            <input value="{{ $dosen->nama }}" class="text-xs mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-slate-700 dark:text-slate-300">
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">NIP</label>
-            <input readonly type="text" value="{{ $dosen->nip }}" class="mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+            <span class="block text-sm font-semibold text-slate-800 dark:text-slate-300">NIP</span>
+            <input value="{{ $dosen->nip }}" class="text-xs mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-slate-700 dark:text-slate-300">
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-            <input readonly type="text" value="{{ $dosen->email }}" class="mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+            <span class="block text-sm font-semibold text-slate-800 dark:text-slate-300">Email</span>
+            <input value="{{ $dosen->email }}" class="text-xs mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-slate-700 dark:text-slate-300">
           </div>
-        </div>
-
-        <hr class="my-6 ">
+        </div> --}}
 
         <!-- Pendidikan Terakhir -->
-        <h2 class="text-lg font-bold text-slate-700 dark:text-white mb-4">Pendidikan Terakhir</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 class="text-sm md:text-lg font-bold text-slate-750 dark:text-white my-2">Pendidikan Terakhir</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
           <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Jenjang</label>
-            <input readonly type="text" value="{{ $dosen->jenjang }}" class="mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+            <span class="block text-sm md:text-base font-semibold text-slate-700 dark:text-slate-300">Jenjang</span>
+            <span class="text-xs md:text-sm mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-slate-700 dark:text-slate-300">{{ $dosen->jenjang }}</span>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Universitas</label>
-            <input readonly type="text" value="{{ $dosen->universitas }}" class="mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+            <span class="block text-sm md:text-base font-semibold text-slate-700 dark:text-slate-300">Universitas</span>
+            <span class="text-xs md:text-sm mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-slate-700 dark:text-slate-300">{{ $dosen->universitas }}</span>
           </div>
         </div>
 
-        <hr class="my-6">
-
-        <!-- Akun Akademik -->
-        <h2 class="text-lg font-bold text-slate-700 dark:text-white mb-4">Akun Akademik</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="flex flex-col justify-between gap-2">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Scopus</label>
-            <a href="{{ $dosen->akun_scopus }}" class="scopus-button px-3 py-2 w-1/2">Scopus</a>
+        <h2 class="text-sm md:text-xl font-bold text-slate-750 dark:text-white my-2">Akun Akademik</h2>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="flex justify-start items-center">
+            {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-300">Scopus</span> --}}
+            <a href="{{ $dosen->akun_scopus }}" class="scopus-button text-xs md:text-sm md:py-3 px-3 py-2 w-9/10">Scopus</a>
           </div>
-          <div class="flex flex-col justify-between gap-2">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Google Scholar</label>
-            <a href="{{ $dosen->akun_googleScholar }}" class="gscholar-button px-3 py-2 w-1/2">Google Scholar</a>
+          <div class="flex justify-start items-center">
+            {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-300">Google Scholar</span> --}}
+            <a href="{{ $dosen->akun_googleScholar }}" class="gscholar-button text-xs md:text-sm md:py-3 px-3 py-2 w-9/10">Scholar</a>
           </div>
-          <div class="flex flex-col justify-between gap-2">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Garuda</label>
-            <a href="{{ $dosen->akun_googleScholar }}" class="garuda-button px-3 py-2 w-1/2">Garuda</a>
+          <div class="flex justify-start items-center">
+            {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-300">Garuda</span> --}}
+            <a href="{{ $dosen->akun_googleScholar }}" class="garuda-button text-xs md:text-sm md:py-3 px-3 py-2 w-9/10">Garuda</a>
           </div>
         </div>
-
-        <hr class="my-6">
-
         <!-- Jabatan -->
-        <h2 class="text-lg font-bold text-slate-700 dark:text-white mb-4">Jabatan</h2>
+        <h2 class="text-sm md:text-xl font-bold text-slate-750 dark:text-white my-2">Jabatan</h2>
         <div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Jabatan Terakhir</label>
-          <input readonly type="text" value="{{ $dosen->jabatanTerakhir ? $dosen->jabatanTerakhir->jabatan->jabatan : 'Tidak Ada Jabatan' }}" class="mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+          <span class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Jabatan Terakhir</span>
+          <span class="text-xs  md:text-sm mt-1 block w-full rounded-md border-none dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            {{ $dosen->jabatanTerakhir ? $dosen->jabatanTerakhir->jabatan->jabatan : 'Tidak Ada Jabatan' }}
+          </span>
         </div>
       </div>
     </div>
