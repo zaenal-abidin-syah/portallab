@@ -4594,3 +4594,10 @@ h6 {
         opacity: 0.65;
     }
 }
+
+.paginate-hidden {
+    display: none;
+}
+.paginate-flex {
+    display: flex;
+}
