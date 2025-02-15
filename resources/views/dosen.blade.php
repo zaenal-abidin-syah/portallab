@@ -19,7 +19,7 @@
       </div>
     </div>
     {{-- Table for Lecturers --}}
-    <div class="flex flex-wrap p-2 md:mb-6 md:p-6 -mx-3">
+    <div class="flex flex-wrap p-2 -mx-3">
       <div class="flex-none w-full px-3">
         <div class="relative flex flex-col mb-6 shadow-xl bg-white dark:bg-slate-850 rounded-2xl">
           <div class="p-4 border-b border-gray-200 dark:border-slate-700">
