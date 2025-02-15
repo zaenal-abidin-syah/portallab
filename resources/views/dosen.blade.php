@@ -31,7 +31,7 @@
                   <thead class="bg-gray-100 dark:bg-slate-700 text-xs md:text-xl">
                     <tr>
                       <th class="p-1 sm:px-2 sm:py-2 text-center">No</th>
-                      <th class="p-1 sm:px-2 sm:py-2 w-6/12 lg:w-3/12 text-center">Nama</th>
+                      <th class="p-1 sm:px-2 sm:py-2 w-6/12 lg:w-4/12 text-center">Nama</th>
                       <th class="p-1 sm:px-2 sm:py-2 md-max:hidden text-center">NIP</th>
                       <th class="p-1 sm:px-2 sm:py-2 md-max:hidden text-center">Email</th>  
                       <th class="p-1 sm:px-2 sm:py-2 lg:whitespace-nowrap text-center">jenjang</th>
