@@ -12,7 +12,7 @@
     <div class="relative w-full mb-2 p-2 md:mb-6 md:p-6 mx-auto">
       <div class="relative flex flex-col min-w-0 p-4 overflow-hidden break-words bg-white shadow-lg rounded-2xl dark:bg-slate-850 dark:shadow-dark-xl">
         <div class="flex justify-between items-center px-3 py-2">
-          <h4 id="dosen-{{$lab->nama_lab}}" class="text-xl font-semibold text-slate-700 dark:text-white">
+          <h4 id="{{$lab->slug}}" class="text-xl font-semibold text-slate-700 dark:text-white">
             Dosen Laboratorium {{$lab->nama_lab}}
           </h4>
         </div>
