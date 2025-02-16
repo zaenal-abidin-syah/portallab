@@ -8,14 +8,14 @@
         <div class="w-full px-2">
             <!-- Title Section -->
             <div class="text-center mb-4">
-                <h1 class="text-2xl font-bold text-blue-600">Laboratorium Teknik Informatika UTM</h1>
-                <p class="text-gray-600 text-sm">Pilih laboratorium yang ingin Anda akses</p>
+                <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-700">Laboratorium Teknik Informatika UTM</h1>
+                <p class="text-slate-600 dark:text-slate-50 text-sm">Pilih laboratorium yang ingin Anda akses</p>
             </div>
 
             <!-- Cards Section -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-3">
                 <!-- Card 1 -->
-                <div class="bg-white shadow-lg rounded-xl px-2 pt-2 pb0 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-800 md:col-span-2 shadow-lg rounded-xl px-2 pt-2 pb0 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
                         <input type="hidden" name="slug" value="teknologi-informasi-dan-aplikasi">
                         <button type="submit" class="w-full">
@@ -25,7 +25,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-800 md:col-span-2 shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
                         <input type="hidden" name="slug" value="common-computing">
                         <button type="submit" class="w-full">
@@ -35,7 +35,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-800 md:col-span-2 shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
                         <input type="hidden" name="slug" value="multimedia">
                         <button type="submit" class="w-full">
@@ -45,7 +45,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-800 md:col-span-3 shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
                         <input type="hidden" name="slug" value="sistem-terdistribusi">
                         <button type="submit" class="w-full">
@@ -53,7 +53,7 @@
                         </button>
                     </form>
                 </div>
-                <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-800 md:col-span-3 shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
                         <input type="hidden" name="slug" value="riset">
                         <button type="submit" class="w-full">
@@ -72,7 +72,7 @@
       <div class="w-full px-4 mx-auto">
         <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
           <div class="w-full max-w-full px-3 mt-0 mb-4 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
-            <div class="text-xs leading-normal text-center text-slate-500 lg:text-left">
+            <div class="text-xs leading-normal text-center text-slate-500 dark:text-slate-50 lg:text-left">
               Copyright ©
               <script>
                 document.write(new Date().getFullYear());
