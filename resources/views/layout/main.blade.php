@@ -25,16 +25,14 @@
     @include('layout.partial.link')
   </head>
   
-  <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-blue-500 dark:bg-blue-900 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
+  <body class="m-0 min-h-screen font-sans text-base antialiased font-normal leading-default bg-blue-500 dark:bg-blue-900 text-slate-500">
+    {{-- <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div> --}}
 
-    <main class="relative my-5 h-full max-h-screen transition-all duration-200 ease-in-out rounded-xl">
+    <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out rounded-xl">
       @include('layout.partial.headermain')
 
       @yield('content')
 
     </main>
-    @include('layout.partial.footer')
   </body>
-  {{-- @include('layout.partial.script') --}}
 </html>

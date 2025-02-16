@@ -15,10 +15,8 @@
       <div class="justify-end flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
         <div class="flex items-center md:ml-auto md:pr-4">
           <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-            {{-- <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-            </span> --}}
             <button
-                class="toggle-button w-14 h-8 rounded-full bg-slate-400 dark:bg-slate-600 relative transition-colors duration-500 ease-infocus:outline-none  focus:border-transparent">
+                class="toggle-button w-14 h-8 rounded-full bg-slate-100 dark:bg-slate-600 relative transition-colors duration-500 ease-infocus:outline-none  focus:border-transparent">
                   <div id="toggle"
                     class="rounded-full w-6 h-6 my-auto relative ml-2 dark:ml-7 pointer-events-none transition-all duration-300 ease-out">
                     <svg class="block dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg">

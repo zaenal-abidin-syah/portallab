@@ -22,13 +22,13 @@
     <div class="flex flex-wrap p-2 -mx-3">
       <div class="flex-none w-full px-3">
         <div class="relative flex flex-col mb-6 shadow-xl bg-white dark:bg-slate-850 rounded-2xl">
-          <div class="p-4 border-b border-gray-200 dark:border-slate-700">
+          <div class="p-4 border-b border-slate-200 dark:border-slate-700">
             <h6 class="font-bold md:text-xl text-slate-700 dark:text-white">Daftar Dosen</h6>
           </div>
           <div class="p-4 overflow-hidden">
               <div class="w-full overflow-x-auto">
                 <table class="table-auto w-full text-left text-slate-500 dark:text-white table table-striped table-responsive">
-                  <thead class="bg-gray-100 dark:bg-slate-700 text-xs md:text-xl">
+                  <thead class="bg-slate-100 dark:bg-slate-700 text-xs md:text-xl">
                     <tr>
                       <th class="p-1 sm:px-2 sm:py-2 text-center">No</th>
                       <th class="p-1 sm:px-2 sm:py-2 w-6/12 lg:w-4/12 text-center">Nama</th>
@@ -41,7 +41,7 @@
                   </thead>
                     <tbody class="text-xs md:text-sm">
                       @foreach($lab->dosen as $index => $dosen)
-                      <tr class="border-t border-gray-200 dark:border-slate-700">
+                      <tr class="border-t border-slate-200 dark:border-slate-700">
                         <td class="p-1 md:px-3 md:py-3 text-xs md:text-lg text-center">{{ $loop->iteration }}</td>
                         <td class="p-1 md:px-3 md:py-3 text-xs md:text-lg">
                           <div class="flex items-center flex-nowrap">
@@ -58,7 +58,7 @@
                           @if($dosen->jabatanTerakhir)
                             {{ $dosen->jabatanTerakhir->jabatan->jabatan }}
                           @else
-                            <span class="text-gray-400">Tidak ada jabatan</span>
+                            <span class="text-slate-400">Tidak ada jabatan</span>
                           @endif
                         </td>
                         <td class="p-1 md:px-3 md:py-3 text-xs md:text-lg text-center whitespace-nowrap">

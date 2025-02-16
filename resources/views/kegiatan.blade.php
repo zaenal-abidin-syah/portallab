@@ -19,12 +19,12 @@
     <div class="flex flex-wrap my-3 -mx-3">
         @foreach($kegiatan->kegiatan_lab_foto as $foto)
         <div class="w-full px-3 mb-6 sm:w-full xl:w-full">
-            <div class="relative flex flex-row items-center min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border responsive-card">
+            <div class="relative flex flex-row justify-center items-start min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border responsive-card">
                 <div class="w-1/2 p-4 image-container">
                     <img src="{{ URL::asset('storage/' . $foto->foto) }}" class="w-full shadow-2xl rounded-xl" alt="foto kegiatan">
                 </div>
                 <div class="w-1/2 p-4 text-container">
-                    <p class="text-justify text-gray-600 dark:text-gray-300">{{$foto->keterangan}}</p>
+                    <p class="text-justify text-slate-600 dark:text-slate-200">{{$foto->keterangan}}</p>
                 </div>
             </div>
         </div>

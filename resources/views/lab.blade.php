@@ -23,9 +23,9 @@
   {{-- end row 1 --}}
 
   <!-- cards row 2 -->
-    <div class="flex flex-wrap mt-6 -mx-3 mb-6">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-5 mt-6 -mx-3 mb-6">
       {{-- column 1 --}}
-      <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
+      <div class="w-full md:col-span-2 max-w-full px-3 mt-0">
         <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
           <div class="flex-auto p-4">
 
@@ -43,7 +43,7 @@
               <div class="flex-none w-auto max-w-full px-3 my-auto">
               @if($kepalaLaboratorium)
                   <h5 class="mb-1 dark:text-white">{{ $kepalaLaboratorium->nama }}</h5>
-                  <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm"> Koordinator Laboratorium {{ $kepalaLaboratorium->laboratorium->nama_lab }}</p>
+                  <p class="mb-0 font-semibold leading-normal dark:text-white text-sm"> Koordinator Laboratorium {{ $kepalaLaboratorium->laboratorium->nama_lab }}</p>
               @else
                   <p>Kepala Laboratorium: Belum ditentukan</p>
               @endif
@@ -71,8 +71,8 @@
       </div>
       {{-- end column 1 --}}
       {{-- column 2 --}}
-      <div class="w-full max-w-full px-3 lg:mt-6 lg:w-7/12 lg:flex-none">
-        <div class="border-black/12.5 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+      <div class="w-full md:col-span-3 max-w-full px-3">
+        <div class="border-black/12.5 dark:text-slate-100 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
           <div class="flex-auto p-4">
             <p>{!! strip_tags($lab->deskripsi) !!}</p>
           </div>
