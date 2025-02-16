@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Main Container -->
-<div class="h-full w-full px-4 py-4 mx-auto bg-gray-100">
+<div class="h-full w-full px-4 py-4 mx-auto bg-gray-100 dark:bg-slate-900">
     <div class="flex justify-center items-center">
         <!-- Main Content Section -->
         <div class="w-full px-2">
@@ -13,7 +13,7 @@
             </div>
 
             <!-- Cards Section -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <!-- Card 1 -->
                 <div class="bg-white shadow-lg rounded-xl px-2 pt-2 pb0 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
@@ -50,6 +50,14 @@
                         <input type="hidden" name="slug" value="sistem-terdistribusi">
                         <button type="submit" class="w-full">
                             <img src="{{ asset('assets/img/SISTER.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-xl object-contain">
+                        </button>
+                    </form>
+                </div>
+                <div class="bg-white shadow-lg rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                    <form action="{{ route('lab') }}" method="GET" class="text-center m-0">
+                        <input type="hidden" name="slug" value="riset">
+                        <button type="submit" class="w-full">
+                            <img src="{{ asset('assets/img/RISET.jpeg') }}" alt="Lab. Riset" class="w-full rounded-xl object-contain">
                         </button>
                     </form>
                 </div>
