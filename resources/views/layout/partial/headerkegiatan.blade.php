@@ -12,7 +12,7 @@
         <h6 class="mb-0 font-bold text-white capitalize">Detail Kegiatan</h6>
       </nav>
 
-      <div class="justify-end flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
+      <div class="justify-end flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0">
         <div class="flex items-center md:ml-auto md:pr-4">
           <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
             <button
@@ -32,7 +32,7 @@
           </div>
 
         </div>
-        <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
+        <ul class="flex flex-row justify-end pl-0 mb-0 list-none">
           <li class="flex items-center pl-4 xl:hidden">
             <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
               <div class="w-4.5 overflow-hidden">

@@ -98,18 +98,6 @@
   <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
       <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-        @php
-          $bulan = now()->month;
-          $tahun = now()->year;
-          
-          if ($bulan >= 2 && $bulan <= 7) {
-              $semester = 'Genap';
-              $tahunAjaran = ($tahun - 1) . '-' . $tahun;
-          } else {
-              $semester = 'Ganjil';
-              $tahunAjaran = $tahun . '-' . ($tahun + 1);
-          }
-        @endphp
         <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
           <h6 class="dark:text-white">Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}</h6>
         </div>
@@ -118,6 +106,7 @@
             <table class="items-center w-full mb-3 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Kuliah</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun Ajaran</th>
                   <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Semester</th>
@@ -126,6 +115,7 @@
               <tbody>
                 @foreach ($matakuliah_lab as $matkul)
                 <tr>
+                  <td class="px-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparen">{{ $loop->iteration }}</td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
@@ -193,6 +183,7 @@
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="w-2 py-3 font-bold uppercase text-center align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Fasilitas</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Jumlah</th>
                 </tr>
@@ -200,6 +191,7 @@
               <tbody>
                 @foreach ($fasilitas_lab as $fasilitas)
                 <tr>
+                  <td class="px-2 py-3 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
@@ -256,6 +248,7 @@
             <table class="items-center w-full mb-4 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Publikasi</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun Terbit</th>
@@ -265,6 +258,7 @@
               <tbody>
                 @foreach ($publikasi_lab as $publikasi)
                 <tr>
+                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
@@ -343,6 +337,7 @@
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Buku</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Laboratorium</th>
                   <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Penulis</th>
@@ -353,6 +348,7 @@
                 @foreach ($buku_lab as $buku)
                 {{-- @dd() --}}
                 <tr>
+                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
@@ -425,6 +421,7 @@
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Riset</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Laboratorium</th>
                 </tr>
@@ -432,7 +429,8 @@
               <tbody>
                 @foreach ($riset_lab as $riset)
                 <tr>
-                  <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
                         <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ucwords($riset->judul_riset)}}</h6>
@@ -488,6 +486,7 @@
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Pengabdian</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal</th>
                 </tr>
@@ -495,6 +494,7 @@
               <tbody>
                 @foreach ($pengabdian_lab as $pengabdian)
                 <tr>
+                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex flex-col justify-center">
@@ -551,6 +551,7 @@
             <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                   <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kategori Kegiatan</th>
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Kegiatan</th>
                   <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Pelaksanaan</th>
@@ -560,6 +561,7 @@
               <tbody>
                 @foreach ($kegiatan_lab as $kegiatan)
                 <tr>
+                  <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       {{-- <div>

@@ -85,7 +85,7 @@ class labcontroller extends Controller
         // dd($kegiatan_lab);
 
         if ($lab) {
-            return view('lab', compact('lab', 'kepalaLaboratorium', 'buku_lab', 'riset_lab', 'publikasi_lab', 'fasilitas_lab', 'matakuliah_lab', 'pengabdian_lab', 'kegiatan_lab'));
+            return view('lab', compact('lab', 'kepalaLaboratorium', 'buku_lab', 'riset_lab', 'publikasi_lab', 'fasilitas_lab', 'matakuliah_lab', 'pengabdian_lab', 'kegiatan_lab', 'semester', 'tahunAjaran'));
         } else {
             return redirect()->back()->with('error', 'Laboratorium tidak ditemukan');
         }
