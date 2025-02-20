@@ -103,7 +103,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
-            <table class="items-center w-full mb-3 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="matakuliah-table" class="items-center w-full mb-3 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -134,11 +134,6 @@
               </tbody>
             </table>
           </div>
-          <div class="flex justify-end pt-5">
-              <nav>
-                  {{ $matakuliah_lab->links() }}
-              </nav>
-          </div>
         </div>
       </div>
     </div>
@@ -147,25 +142,19 @@
 
 
   <div class="flex flex-wrap w-full mt-6 -mx-3">
-    {{-- column 1 --}}
-      <div class="w-full max-w-full px-3 mt-0 mb-6 lg:w-7/12 lg:flex-none">
-    <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
-      
+    <div class="w-full max-w-full px-3 mt-0 mb-6 lg:w-7/12 lg:flex-none">
+      <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
+      </div>
     </div>
   </div>
-    </div>
   <div class="relative w-full mb-6 mx-auto">
-
     <div class="relative flex flex-col flex-auto min-w-0 p-4 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
       <div class="flex flex-wrap -mx-3">
-
         <div class="flex-none w-auto max-w-full px-3 my-auto">
           <div class="h-full">
             <h4 id="Fasilitas" class="mb-1 dark:text-white">Fasilitas</h4>
-            {{-- <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm">Public Relations</p> --}}
           </div>
         </div>
-    
       </div>
     </div>
   </div>
@@ -180,7 +169,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="py-0 px-5 overflow-x-auto">
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="fasilitas-table" class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="w-2 py-3 font-bold uppercase text-center align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -207,11 +196,6 @@
               </tbody>
             </table>
           </div>
-          <div class="flex justify-end pt-5">
-            <nav>
-                {{ $fasilitas_lab->links() }}
-            </nav>
-        </div>
         </div>
       </div>
     </div>
@@ -245,7 +229,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="py-0 px-5 overflow-x-auto">
-            <table class="items-center w-full mb-4 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="publikasi-table" class="items-center w-full mb-4 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -296,11 +280,6 @@
               </tbody>
             </table>
           </div>
-        <div class="flex justify-end pt-5">
-          <nav>
-              {{ $publikasi_lab->links() }}
-          </nav>
-        </div>
         </div>
       </div>
     </div>
@@ -334,7 +313,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="buku-table" class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -359,18 +338,10 @@
                   <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$buku->buku_lab[0]->laboratorium->nama_lab}}</p>
                   </td>
-                  <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                    {{-- $buku_penulis = buku_penulis::whereIn('id_buku', $buku->id_buku)->get(['id_dosen']); --}}
+                  <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     @foreach ($buku->buku_penulis as $penulis)
                     <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$penulis->dosen->nama}}</span>
                     @endforeach
-                    {{-- @foreach ($buku_penulis as $penulis)
-                    <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$penulis->dosen->nama}}</span>
-                    @endforeach --}}
-                    
-                    {{-- <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$buku_penulis}}</span> --}}
-                    {{-- <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$buku->id_buku}}</span> --}}
-                    
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                     <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$buku->tanggal}}</span>
@@ -380,11 +351,6 @@
               </tbody>
             </table>
           </div>
-          <div class="flex justify-end pt-5">
-            <nav>
-                {{ $buku_lab->links() }}
-            </nav>
-        </div>
         </div>
       </div>
     </div>
@@ -393,17 +359,13 @@
 
   {{-- row 7 --}}
   <div class="relative w-full mb-6 mx-auto">
-
     <div class="relative flex flex-col flex-auto min-w-0 p-4 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
       <div class="flex flex-wrap -mx-3">
-
         <div class="flex-none w-auto max-w-full px-3 my-auto">
           <div class="h-full">
             <h4 id="riset" class="mb-1 dark:text-white">Riset</h4>
-            {{-- <p class="mb-0 font-semibold leading-normal dark:text-white dark:opacity-60 text-sm">Public Relations</p> --}}
           </div>
-        </div>
-    
+        </div>    
       </div>
     </div>
   </div>
@@ -418,7 +380,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="riset-table" class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -426,7 +388,7 @@
                   <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Laboratorium</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody> 
                 @foreach ($riset_lab as $riset)
                 <tr>
                   <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">{{ $loop->iteration }}</td>
@@ -445,11 +407,6 @@
               </tbody>
             </table>
           </div>
-          <div class="flex justify-end pt-5">
-            <nav>
-                {{ $riset_lab->links() }}
-            </nav>
-        </div>
         </div>
       </div>
     </div>
@@ -483,7 +440,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="pengabdian-table" class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -510,11 +467,6 @@
               </tbody>
             </table>
           </div>
-          <div class="flex justify-end pt-5">
-            <nav>
-                {{ $pengabdian_lab->links() }}
-            </nav>
-        </div>
         </div>
       </div>
     </div>
@@ -548,7 +500,7 @@
         </div>
         <div class="flex-auto px-5 pb-5 pt-0">
           <div class="p-0 overflow-x-auto">
-            <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+            <table id="kegiatan-table" class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
               <thead class="align-bottom">
                 <tr>
                   <th class="py-3 w-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
@@ -594,28 +546,24 @@
               </tbody>
             </table>
           </div>
-          <div class="flex justify-end pt-5">
-            <nav>
-                {{ $kegiatan_lab->links() }}
-            </nav>
-        </div>
         </div>
       </div>
     </div>
   </div>
   {{-- end row 9 table --}}
 
+
     <footer class="pt-4">
       <div class="w-full px-6 mx-auto">
         <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
           <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
             <div class="text-sm leading-normal text-center text-slate-500 lg:text-left">
-              Copyright ©
+              Copyright © {{ $lab->id_lab }}
               <script>
                 document.write(new Date().getFullYear());
               </script>
               <a class="font-semibold text-slate-700 dark:text-white" target="_blank">‧ LAB Teknik Informatika ‧</a>
-              All rights reserved.
+              All rights reserved. 
             </div>
           </div>
         </div>
@@ -623,5 +571,92 @@
     </footer>
   </div>
   <!-- end cards -->
+  {{-- <table id="table-coba"></table> --}}
+
+  {{-- <table id="riset2" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Judul Riset</th>
+            <th>Tahun</th>
+            <th>Laboratorium</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>halo</td>
+        <td>halo</td>
+        <td>halo</td>
+        <td>halo</td>
+      </tr>
+    </tbody>
+</table> --}}
+
+
+
+  <script>
+      
+
+    //   $(document).ready(function() {
+    //     $('#riset-table').DataTable({
+    //         // Menggunakan AJAX untuk mengambil data dari Laravel
+    //         ajax: {
+    //             url: '{{ route("research") }}', // URL route yang mengembalikan JSON
+    //             data : function (d) 
+    //             {
+    //               d.slug = "{{ $lab->slug }}"
+    //             },
+    //             dataSrc: 'data', // Jika data JSON yang dikembalikan berupa array
+    //             error: function (xhr, error, code) {
+    //                 console.error("AJAX error:", error, code);
+    //             }
+    //         },
+    //         columns: [
+    //             {
+    //                 data: null,
+    //                 name: 'No',
+    //                 render: function (data, type, row, meta) {
+    //                     return meta.row + meta.settings._iDisplayStart + 1;
+    //                 }
+    //             },
+    //             { data: 'judul_riset', name: 'Judul Riset' },
+    //             { data: 'tahun', name: 'tahun' },
+    //             { data: 'laboratorium.nama_lab', name: 'Laboratorium' },
+    //         ],
+    //         responsive : true,
+
+    //     }).columns.adjust()
+		// 		.responsive.recalc();
+    // });
+
+
+    // const table = new DataTable('#table-coba', {
+    //     serverSide: true,
+    //     processing : true,
+    //     ordering: true,
+    //     ajax: {
+    //       url : "{ route("getResearch") }}",
+    //       data : function (d) 
+    //       {
+    //         d.slug = "{ $lab->slug }}"
+    //       },
+    //       dataSrc : 'data',
+    //       error: function (xhr, error, code) {
+    //         console.error("AJAX error:", error, code);
+    //     }
+    //     },
+    //     columns : [
+    //       {data : "judul_riset", title : "Judul Riset", orderable: true},
+    //       {data : "tahun", title : "tahun", orderable: true},
+    //       {data : "laboratorium.nama_lab", title : "Laboratorium", orderable: false}
+    //     ],
+    //     order: [[1, 'asc']]
+        
+    // });
+    // $('#table-coba').on('xhr.dt', function (e, settings, json, xhr) {
+    //   console.log("Data yang diterima dari server:", json);
+    // });
+
+  </script>
 
 @endsection

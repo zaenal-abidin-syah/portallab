@@ -42,19 +42,21 @@ class labcontroller extends Controller
             ->first();
         $buku_lab = Buku::with(['buku_penulis.dosen', 'buku_lab.laboratorium'])
             ->whereHas('buku_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->paginate(10, ['*'], 'ebooks_page')->withQueryString();
+            ->latest()->get();
+        // ->paginate(10, ['*'], 'ebooks_page')->withQueryString();
         $riset_lab = Riset::with('laboratorium')
             ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
-            ->latest()
-            ->paginate(10, ['*'], 'researches_page')->withQueryString();
+            ->latest()->get();
+        // ->paginate(10, ['*'], 'researches_page')->withQueryString();
         $publikasi_lab = Publikasi::with('publikasi_penulis.dosen')
             ->whereHas('publikasi_penulis.dosen', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->latest()
-            ->paginate(10, ['*'], 'publications_page')->withQueryString();
+            ->latest()->get();
+        // dd($publikasi_lab);
+        // ->paginate(10, ['*'], 'publications_page')->withQueryString();
         $fasilitas_lab = Fasilitas::with('fasilitas_lab')
             ->whereHas('fasilitas_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->latest()
-            ->paginate(10, ['*'], 'facilities_page')->withQueryString();
+            ->latest()->get();
+        // ->paginate(10, ['*'], 'facilities_page')->withQueryString();
 
         $bulan = now()->month;
         $tahun = now()->year;
@@ -71,17 +73,18 @@ class labcontroller extends Controller
             ->where('tahun_ajaran_1', strval($tahunAjaran))
             ->where('tahun_ajaran_2', strval($tahunAjaran + 1))
             ->where('semester', $semester)
-            ->latest()
-            ->paginate(10, ['*'], 'courses_page')->withQueryString();
+            ->latest()->get();
+        // ->paginate(10, ['*'], 'courses_page')->withQueryString();
 
         $pengabdian_lab = Pengabdian::where('id_lab', $id_lab)
-            ->latest()
-            ->paginate(10, ['*'], 'dedications_page')->withQueryString();
+            ->latest()->get();
+        // ->paginate(10, ['*'], 'dedications_page')->withQueryString();
         $kegiatan_lab = Kegiatan_lab::with('kegiatan', 'kegiatan_lab_foto')
             ->latest()
             ->where('id_lab', $id_lab)
-            // ->whereHas('kegiatan_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->paginate(10, ['*'], 'activities_page')->withQueryString();
+            ->latest()->get();
+        // ->whereHas('kegiatan_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
+        // ->paginate(10, ['*'], 'activities_page')->withQueryString();
         // dd($kegiatan_lab);
 
         if ($lab) {
@@ -90,4 +93,68 @@ class labcontroller extends Controller
             return redirect()->back()->with('error', 'Laboratorium tidak ditemukan');
         }
     }
+    public function research(Request $request)
+    {
+        $slug = $request->input('slug');
+        $lab = Laboratorium::where('slug', $slug)->first();
+        $id_lab = $lab->id;
+        $riset_lab = Riset::with('laboratorium')
+            ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
+            ->latest();
+        return response()->json([
+            'data' => $riset_lab->get()->toArray()
+        ]);
+    }
+    // public function getResearch(Request $request)
+    // {
+    //     $length = $request->input('length', 10);
+    //     $start = $request->input('start', 0);
+    //     $page = ($start / $length) + 1;
+    //     \Log::info('Order Column Index: ' . $request->input('order.0.column'));
+    //     \Log::info('Order Column Name: ' . $request->input("columns." . $request->input('order.0.column') . ".data"));
+    //     \Log::info('Order Direction: ' . $request->input('order.0.dir'));
+
+    //     \Log::info($request->all());
+
+    //     $columnIndex = $request->input('order.0.column'); // Index kolom
+    //     $columnName = $request->input("columns.$columnIndex.data"); // Nama kolom
+    //     $columnSortOrder = $request->input('order.0.dir', 'asc'); // Arah sorting (asc/desc)
+    //     // Validasi kolom yang diizinkan
+    //     $allowedColumns = ['judul_riset', 'tahun'];
+
+    //     // Cek jika kolom kosong atau tidak valid
+    //     if (empty($columnName) || !in_array($columnName, $allowedColumns)) {
+    //         $columnName = 'judul_riset'; // Fallback kolom default
+    //         $columnSortOrder = 'asc';
+    //     }
+
+    //     $slug = $request->input('slug');
+    //     $lab = Laboratorium::where('slug', $slug)->first();
+    //     $id_lab = $lab->id;
+    //     $riset_lab = Riset::with('laboratorium')
+    //         ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
+    //         ->when($request->input('search.value'), function ($query) use ($request) {
+    //             $search = $request->input('search.value');
+    //             $query->where(function ($q) use ($search) {
+    //                 $q->where('judul_riset', 'like', "%{$search}%")
+    //                     ->orWhere('tahun', 'like', "%{$search}%");
+    //             });
+    //         })
+    //         ->orderBy($columnName, $columnSortOrder)
+    //         ->latest()->paginate($request->length, ['*'], 'researches_page', $page)->withQueryString();
+    //     if (!$lab) {
+    //         return response()->json([
+    //             "draw" => intval($request->draw),
+    //             "recordsTotal" => 0,
+    //             "recordsFiltered" => 0,
+    //             "data" => []
+    //         ]);
+    //     }
+    //     return response()->json([
+    //         "draw" => intval($request->draw),
+    //         "data" => $riset_lab->items(),
+    //         "recordsTotal" => $riset_lab->total(),
+    //         "recordsFiltered" => $riset_lab->total()
+    //     ]);
+    // }
 }
