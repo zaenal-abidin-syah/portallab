@@ -15,13 +15,11 @@
       <div class="justify-end flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
         <div class="flex justify-items-center">
           <div class="flex items-center md:ml-auto md:pr-4">
-            <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-              {{-- <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-              </span> --}}
+            <div class="relative flex items-center justify-center w-full transition-all rounded-lg ease">
               <button
-                  class="toggle-button w-14 h-8 rounded-full bg-slate-100 dark:bg-slate-600 relative transition-colors duration-500 ease-infocus:outline-none  focus:border-transparent">
+                  class="toggle-button w-14 h-8 rounded-full bg-slate-100 dark:bg-slate-600 relative transition-colors duration-500 ease-infocus:outline-none focus:border-transparent">
                     <div id="toggle"
-                      class="rounded-full  w-6 h-6 my-auto relative ml-2 dark:ml-7 pointer-events-none transition-all duration-300 ease-out">
+                      class="rounded-full w-6 h-6 my-auto relative ml-2 dark:ml-7 pointer-events-none transition-all duration-300 ease-out">
                       <svg class="block dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                           <path class="fill-slate-300" d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z" />
                           <path class="fill-slate-400" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z" />
@@ -33,7 +31,6 @@
                     </div>
               </button>
             </div>
-  
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
             <li class="flex items-center pl-4 xl:hidden">
