@@ -15,7 +15,7 @@
       <div class="justify-end flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
         <div class="flex justify-items-center">
           <div class="flex items-center md:ml-auto md:pr-4">
-            <div class="flex items-center justify-center w-full transition-all rounded-lg ease">
+            <div class="relative flex items-center justify-center w-full transition-all rounded-lg ease">
               <button
                   class="toggle-button w-14 h-8 rounded-full bg-slate-100 dark:bg-slate-600 relative transition-colors duration-500 ease-infocus:outline-none focus:border-transparent flex items-center">
                     <div id="toggle"

@@ -18,7 +18,7 @@
             <button
                 class="toggle-button w-14 h-8 rounded-full bg-slate-100 dark:bg-slate-600 relative transition-colors duration-500 ease-infocus:outline-none  focus:border-transparent">
                   <div id="toggle"
-                    class="rounded-full w-6 h-6 my-auto relative ml-2 dark:ml-7 pointer-events-none transition-all duration-300 ease-out">
+                    class="flex items-center rounded-full w-6 h-6 relative ml-2 dark:ml-7 pointer-events-none transition-all duration-300 ease-out">
                     <svg class="block dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                         <path class="fill-slate-300" d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z" />
                         <path class="fill-slate-400" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z" />
