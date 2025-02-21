@@ -19,3 +19,10 @@ table.dataTable td.dt-type-numeric,
 table.dataTable td.dt-type-date {
     @apply text-left !important;
 }
+
+.dt-length label,
+.dt-search label,
+div.dt-info,
+.dt-paging-button {
+    @apply text-xs sm:text-sm;
+}

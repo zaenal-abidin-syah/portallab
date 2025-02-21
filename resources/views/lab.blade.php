@@ -2,42 +2,42 @@
 @section('content')
 
 <!-- cards -->
-<div class="w-full px-6 py-6 mx-auto">
+<div class="w-full md:px-6 md:py-6 px-2 py-2 mx-auto">
   <div class="relative w-full mx-auto">
-    <div class="relative flex flex-col flex-auto min-w-0 p-6 mx-3 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
-      <div class="flex flex-wrap -mx-3">
-        <div class="flex-none w-auto max-w-full px-3 my-auto">
+    <div class="relative flex flex-col flex-auto min-w-0 p-2 mx-1 md:p-6 md:mx-3 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl md:shadow-2xl rounded-xl md:rounded-2xl bg-clip-border">
+      <div class="flex flex-wrap">
+        <div class="flex-none w-auto max-w-full px-1 md:px-3 my-auto">
           <div class="h-full">
-            <h4 id="lab" class="mb-1 dark:text-white">{{ $lab->nama_lab }}</h4>
+            <h4 id="lab" class="dark:text-white text-xl md:text-2xl">{{ $lab->nama_lab }}</h4>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-1 gap-3 md:grid-cols-5 mt-6 mb-6">
-    <div class="w-full md:col-span-2 max-w-full px-3 mt-0">
-      <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
-        <div class="flex-auto p-4">
+  <div class="grid grid-cols-1 gap-3 md:grid-cols-12 mt-2 mb-2 md:mt-6 md:mb-6">
+    <div class="w-full md:col-span-5 max-w-full px-1 md:px-3 mt-0">
+      <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 break-words rounded-xl md:rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
+        <div class="flex-auto p-1.5 md:p-4">
 
-          <div class="flex flex-wrap">
+          <div class="relative flex flex-wrap md-max:justify-start lg:justify-start justify-center  items-center gap-2">
             <div class="flex-none w-auto max-w-full">
-              <div class="relative inline-flex items-center justify-center text-white transition-all duration-200 ease-in-out text-base h-19 w-19 rounded-xl">
+              <div class="relative inline-flex items-center justify-center text-white transition-all duration-200 ease-in-out text-sm md:text-base w-16 h-16 md:h-20 md:w-20 rounded-xl">
                 @if($kepalaLaboratorium)
-                <img src={{ URL::asset("storage/$kepalaLaboratorium->foto") }} alt="profile_image" class="w-16 h-16 shadow-2xl rounded-xl" />
+                <img src={{ URL::asset("storage/$kepalaLaboratorium->foto") }} alt="profile_image" class="w-14 h-14 md:w-16 md:h-16 shadow-2xl rounded-xl" />
                 @else
                 <img alt="Kepala Laboratorium : Belum Ditemukan" class="w-full shadow-2xl rounded-xl" />
                 @endif
               </div>
             </div>
-            <div class="flex-none w-auto max-w-full px-3 my-auto">
-            @if($kepalaLaboratorium)
-                <h5 class="mb-1 dark:text-white">{{ $kepalaLaboratorium->nama }}</h5>
-                <p class="mb-0 font-semibold leading-normal dark:text-white text-sm"> Koordinator Laboratorium {{ $kepalaLaboratorium->laboratorium->nama_lab }}</p>
-            @else
-                <p>Kepala Laboratorium: Belum ditentukan</p>
-            @endif
+            <div class="flex-none w-auto max-w-full">
+              @if($kepalaLaboratorium)
+                  <h5 class="dark:text-white text-base md:text-xl">{{ $kepalaLaboratorium->nama }}</h5>
+                  <p class="mb-0 font-semibold leading-normal dark:text-white text-xs md:text-sm"> Koordinator Laboratorium {{ $kepalaLaboratorium->laboratorium->nama_lab }}</p>
+              @else
+                  <p>Kepala Laboratorium: Belum ditentukan</p>
+              @endif
             </div>          
-            <div class="flex-none w-auto max-w-full px-3 my-auto ml-auto">
+            <div class="flex-none absolute top-0 right-0 w-auto max-w-full">
               @if($kepalaLaboratorium)  
               <form action="{{ route('dosendetail')}}" method="POST" class="flex w-full">
                 @csrf
@@ -55,10 +55,10 @@
         </div>
       </div>
     </div>
-    <div class="w-full md:col-span-3 max-w-full px-3">
+    <div class="w-full md:col-span-7 max-w-full px-1 md:px-3">
       <div class="border-black/12.5 dark:text-slate-100 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
-        <div class="flex-auto p-4">
-          <p>{!! strip_tags($lab->deskripsi) !!}</p>
+        <div class="flex-auto p-3 md:p-4">
+          <p class="text-sm md:text-base">{!! strip_tags($lab->deskripsi) !!}</p>
         </div>
       </div>
     </div>
@@ -68,8 +68,8 @@
   <x-table-wraper idTable="matakuliah-table" title="Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Kuliah</th>
+        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Kuliah</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
@@ -112,11 +112,11 @@
   <x-table-wraper idTable="publikasi-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link</th>
+        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
@@ -159,10 +159,10 @@
   <x-table-wraper idTable="buku-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
+        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
@@ -189,10 +189,10 @@
   <x-table-wraper idTable="riset-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
+        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
@@ -218,9 +218,9 @@
   <x-table-wraper idTable="pengabdian-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal</th>
+        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
@@ -242,11 +242,11 @@
   <x-table-wraper idTable="kegiatan-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Kegiatan</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kategori Kegiatan</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Pelaksanaan</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">#</th>
+        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Kegiatan</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kategori Kegiatan</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Pelaksanaan</th>
+        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">#</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
