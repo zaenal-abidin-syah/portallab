@@ -19,10 +19,21 @@ table.dataTable td.dt-type-numeric,
 table.dataTable td.dt-type-date {
     @apply text-left !important;
 }
+table.dataTable th.judul,
+table.dataTable td.judul {
+    @apply w-16 !important;
+}
 
 .dt-length label,
 .dt-search label,
 div.dt-info,
 .dt-paging-button {
     @apply text-xs sm:text-sm;
+}
+/* .number-table {
+    @apply p-0 !important;
+} */
+
+table.dataTable > tbody > tr > th {
+    @apply pl-1 mr-1 !important;
 }

@@ -6,7 +6,7 @@
             </div>
             <div class="flex-auto pt-0">
                 <div class="overflow-x-auto">
-                    <table id="{{ $idTable }}" class="w-full border-collapse dark:border-slate-400 text-slate-700 dark:text-slate-50 text-xs md:text-sm">
+                    <table id="{{ $idTable }}" style="table-layout: auto" class="w-full border-collapse dark:border-slate-400 text-slate-700 dark:text-slate-50 text-xs md:text-sm">
                         <thead class="align-bottom">
                             {{ $thead }}
                         </thead>

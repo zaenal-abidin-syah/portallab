@@ -68,7 +68,7 @@
   <x-table-wraper idTable="matakuliah-table" title="Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mata Kuliah</th>
       </tr>
     </x-slot>
@@ -76,7 +76,7 @@
       @foreach ($matakuliah_lab as $matkul)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($matkul->nama_matKul)}}">
             {{ucwords($matkul->nama_matKul)}}
           </td>
         </tr>
@@ -88,7 +88,7 @@
   <x-table-wraper idTable="fasilitas-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Fasilitas</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white text-sm border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Jumlah</th>
       </tr>
@@ -97,7 +97,7 @@
       @foreach ($fasilitas_lab as $fasilitas)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{$fasilitas->nama_fasilitas}}">
             {{$fasilitas->nama_fasilitas}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -112,10 +112,10 @@
   <x-table-wraper idTable="publikasi-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
+        <th class="sm-max:hidden font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Link</th>
       </tr>
     </x-slot>
@@ -123,13 +123,13 @@
       @foreach ($publikasi_lab as $publikasi)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($publikasi->judul_publikasi)}}">
             {{ucwords($publikasi->judul_publikasi)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
             {{$publikasi->publikasi_penulis[0]->dosen->nama}}
           </td> 
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="sm-max:hidden align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
             {{$publikasi->tanggal}}
           </td> 
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -159,7 +159,7 @@
   <x-table-wraper idTable="buku-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
@@ -169,7 +169,7 @@
       @foreach ($buku_lab as $buku)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($buku->judul_buku)}}">
             {{ucwords($buku->judul_buku)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -189,24 +189,24 @@
   <x-table-wraper idTable="riset-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
+        <th class="md-max:hidden font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tahun</th>
       </tr>
     </x-slot>
     <x-slot name="tbody">
       @foreach ($riset_lab as $riset)
-        <tr>
+        <tr class="w-full">
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($riset->judul_riset)}}">
             {{ucwords($riset->judul_riset)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
             {{ $riset->dosen->nama }}
           </td> 
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
-            {{$riset->tanggal}}
+          <td class="md-max:hidden align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+            {{$riset->tanggal ?? "-"}}
           </td> 
         </tr>
       @endforeach
@@ -218,7 +218,7 @@
   <x-table-wraper idTable="pengabdian-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal</th>
       </tr>
@@ -227,7 +227,7 @@
       @foreach ($pengabdian_lab as $pengabdian)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($pengabdian->judul_pengabdian)}}">
             {{ucwords($pengabdian->judul_pengabdian)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -242,10 +242,10 @@
   <x-table-wraper idTable="kegiatan-table">
     <x-slot name="thead">
       <tr>
-        <th class="w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+        <th class="number-table w-2 font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Judul Kegiatan</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kategori Kegiatan</th>
-        <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Pelaksanaan</th>
+        <th class="sm-max:hidden font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal Pelaksanaan</th>
         <th class="font-bold uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-slate-400 dark:text-white border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">#</th>
       </tr>
     </x-slot>
@@ -253,13 +253,13 @@
       @foreach ($kegiatan_lab as $kegiatan)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($kegiatan->nama_kegiatan)}}">
             {{ucwords($kegiatan->nama_kegiatan)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
             {{$kegiatan->kegiatan->kategori_kegiatan}}
           </td> 
-          <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
+          <td class="sm-max:hidden align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
             {{$kegiatan->tanggal}}
           </td> 
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
