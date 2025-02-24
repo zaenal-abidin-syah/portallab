@@ -3,14 +3,14 @@
 @import "tailwindcss/utilities";
 
 .gscholar-button {
-    @apply text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 rounded-lg text-xs text-center;
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 rounded-lg text-center;
 }
 
 .scopus-button {
-    @apply text-white bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 rounded-lg text-xs  text-center;
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 rounded-lg text-center;
 }
 .garuda-button {
-    @apply text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-xs text-center;
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-center;
 }
 
 table.dataTable th.dt-type-numeric,
@@ -28,7 +28,7 @@ table.dataTable td.judul {
 .dt-search label,
 div.dt-info,
 .dt-paging-button {
-    @apply text-xs sm:text-sm;
+    @apply text-xs sm:text-sm md:text-base !important;
 }
 /* .number-table {
     @apply p-0 !important;
@@ -36,4 +36,8 @@ div.dt-info,
 
 table.dataTable > tbody > tr > th {
     @apply pl-1 mr-1 !important;
+}
+
+table.dataTable > thead > th {
+    @apply text-xs sm:text-sm md:text-base !important;
 }
