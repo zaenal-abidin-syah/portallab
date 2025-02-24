@@ -59,9 +59,9 @@ function truncateText() {
             // md
             maxLength = 60;
         } else if (window.innerWidth < 1290) {
+            // lg
             maxLength = 90;
         } else {
-            // lg
             maxLength = 400;
         }
 
