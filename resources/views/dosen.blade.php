@@ -1,7 +1,7 @@
 @extends('layout.dosen')
 @section('content')
 <!-- Container -->
-<div class="flex mt-6 justify-start flex-col">
+<div class="flex mb-3 justify-start flex-col">
   @if($laboratorium->isEmpty())
     <div class="text-center text-slate-500 dark:text-white">
       <h4 class="text-lg font-semibold">Belum ada data laboratorium tersedia.</h4>
