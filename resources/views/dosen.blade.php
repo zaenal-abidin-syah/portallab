@@ -21,7 +21,7 @@
     {{-- Table for Lecturers --}}
     <div class="flex flex-wrap">
       <div class="flex-none w-full">
-        <div class="mx-5 mb-5 p-2 relative flex flex-col shadow-xl bg-white dark:bg-slate-850 rounded-2xl">
+        <div class="mx-5 mb-5 p-2 relative flex flex-col shadow-xl bg-white dark:bg-slate-850 rounded-md">
           <div class="overflow-hidden">
               <div class="w-full overflow-x-auto">
                 <table class="table-auto w-full text-left text-slate-500 dark:text-white table table-striped table-responsive">
@@ -33,7 +33,7 @@
                       {{-- <th class="py-0 sm:px-2 md-max:hidden text-center text-xxs sm:text-xs md:text-sm">Email</th>  
                       <th class="py-0 sm:px-2 lg:whitespace-nowrap text-center text-xxs sm:text-xs md:text-sm">jenjang</th>
                       <th class="py-0 sm:px-2 text-center text-xxs sm:text-xs md:text-sm">Jabatan</th> --}}
-                      <th class="py-0 sm:px-2 text-center text-xxs sm:text-xs md:text-sm">Aksi</th>
+                      <th class="py-0 w-1/12 sm:px-2 text-center text-xxs sm:text-xs md:text-sm">Aksi</th>
                     </tr>
                   </thead>
                     <tbody class="text-xs md:text-sm">
