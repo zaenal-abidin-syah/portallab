@@ -4,34 +4,33 @@
 <!-- cards -->
 {{-- <div class="w-full md:px-6 md:py-6 px-2 py-2 mx-auto"> --}}
   <div class="relative w-full mx-auto">
-    <div class="relative flex flex-col flex-auto min-w-0 p-2 mx-1 md:p-6 md:mx-3 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl md:shadow-2xl rounded-xl md:rounded-2xl bg-clip-border">
+    <div class="relative flex flex-col flex-auto min-w-0 px-2 py-2 mx-1 md:px-6 md:mx-3 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl md:shadow-xl rounded-sm md:rounded-md bg-clip-border">
       <div class="flex flex-wrap">
         <div class="flex-none w-auto max-w-full px-1 md:px-3 my-auto">
           <div class="h-full">
-            <h4 id="lab" class="dark:text-white text-xl md:text-2xl">{{ $lab->nama_lab }}</h4>
+            <span id="lab" class="text-slate-700 font-bold dark:text-white text-sm md:text-base">{{ $lab->nama_lab }}</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-1 gap-3 md:grid-cols-12 mt-2 mb-2 md:mt-6 md:mb-6">
-    <div class="w-full md:col-span-5 max-w-full px-1 md:px-3 mt-0">
-      <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 break-words rounded-xl md:rounded-2xl border-0 border-solid bg-white bg-clip-border"> 
+  <div class="grid grid-cols-1 gap-1 md:gap-2  md:grid-cols-12 my-1 md:my-3">
+    <div class="w-full md:col-span-5 md:self-stretch max-w-full px-1 md:px-3">
+      <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 break-words rounded-sm md:rounded-md border-0 border-solid bg-white bg-clip-border"> 
         <div class="flex-auto p-1.5 md:p-4">
-
           <div class="relative flex flex-wrap md-max:justify-start lg:justify-start justify-center  items-center gap-2">
             <div class="flex-none w-auto max-w-full">
               <div class="relative inline-flex items-center justify-center text-white transition-all duration-200 ease-in-out text-sm md:text-base w-16 h-16 md:h-20 md:w-20 rounded-xl">
                 @if($kepalaLaboratorium)
-                <img src={{ URL::asset("storage/$kepalaLaboratorium->foto") }} alt="profile_image" class="w-14 h-14 md:w-16 md:h-16 shadow-2xl rounded-xl" />
+                <img src={{ URL::asset("storage/$kepalaLaboratorium->foto") }} alt="profile_image" class="w-14 h-14 md:w-16 md:h-16 shadow-xl rounded-md" />
                 @else
-                <img alt="Kepala Laboratorium : Belum Ditemukan" class="w-full shadow-2xl rounded-xl" />
+                <img alt="Kepala Laboratorium : Belum Ditemukan" class="w-full shadow-md rounded-md" />
                 @endif
               </div>
             </div>
             <div class="flex-none w-auto max-w-full">
               @if($kepalaLaboratorium)
-                  <h5 class="dark:text-white text-base md:text-xl">{{ $kepalaLaboratorium->nama }}</h5>
+                  <h5 class="dark:text-white text-sm md:text-base">{{ $kepalaLaboratorium->nama }}</h5>
                   <p class="mb-0 font-semibold leading-normal dark:text-white text-xs md:text-sm"> Koordinator Laboratorium {{ $kepalaLaboratorium->laboratorium->nama_lab }}</p>
               @else
                   <p>Kepala Laboratorium: Belum ditentukan</p>
@@ -49,16 +48,15 @@
               @else
                 <p>Kepala Laboratorium: Belum ditentukan</p>
               @endif
-
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-full md:col-span-7 max-w-full px-1 md:px-3">
-      <div class="border-black/12.5 dark:text-slate-100 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
-        <div class="flex-auto p-3 md:p-4">
-          <p class="text-sm md:text-base">{!! strip_tags($lab->deskripsi) !!}</p>
+    <div class="w-full md:col-span-7 md:self-stretch max-w-full px-1 md:px-3">
+      <div class="border-black/12.5 dark:text-slate-100 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-sm md:rounded-md border-0 border-solid bg-white bg-clip-border">
+        <div class="flex-auto p-1.5 md:p-4">
+          <p class="text-xs md:text-sm">{!! strip_tags($lab->deskripsi) !!}</p>
         </div>
       </div>
     </div>

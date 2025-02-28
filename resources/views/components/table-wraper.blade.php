@@ -1,6 +1,6 @@
-<div class="flex flex-wrap mx-1 my-2 md:mx-3 md:my-6">
+<div class="flex flex-wrap mx-1 my-2 md:mx-3 md:my-3">
     <div class="flex-none w-full max-w-full">
-        <div class="p-3 md:p-6 relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+        <div class="p-3 md:p-6 relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-md dark:bg-slate-850 dark:shadow-dark-xl rounded-md bg-clip-border">
             <div class="border-b-0 border-b-solid rounded-t-xl md:rounded-t-2xl border-b-transparent">
                 <h6 class="dark:text-white text-sm md:text-base">{{ $title ?? '' }}</h6>
             </div>
