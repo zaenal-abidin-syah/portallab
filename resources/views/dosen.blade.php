@@ -10,7 +10,7 @@
     @foreach($laboratorium as $lab)
     {{-- Card for Laboratory --}}
     <div class="relative w-full mx-auto">
-      <div class="mx-5 mb-5 py-1 px-5 relative flex flex-col min-w-0 overflow-hidden break-words bg-white shadow-md rounded-md dark:bg-slate-850 dark:shadow-dark-xl">
+      <div class="mx-5 mb-5 py-1 px-5 relative flex flex-col min-w-0 overflow-hidden break-words bg-white  shadow-md rounded-md dark:bg-slate-850 dark:shadow-dark-xl">
         <div class="flex">
           <span id="{{$lab->slug}}" class="text-xxs sm:text-xs md:text-sm font-semibold text-slate-700 dark:text-white">
             Dosen Laboratorium {{$lab->nama_lab}}
