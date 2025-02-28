@@ -1,7 +1,7 @@
 @extends('layout.dosen')
 @section('content')
 <!-- Container -->
-<div class="flex mb-3 mt-2 justify-start flex-col">
+{{-- <div class="flex mb-3 mt-2 justify-start flex-col"> --}}
   @if($laboratorium->isEmpty())
     <div class="text-center text-slate-500 dark:text-white">
       <h4 class="text-lg font-semibold">Belum ada data laboratorium tersedia.</h4>
@@ -85,18 +85,5 @@
       <p>Copyright © <script>document.write(new Date().getFullYear());</script> ‧ LAB Teknik Informatika ‧ All rights reserved.</p>
     </div>
   </footer>
-</div>
+{{-- </div> --}}
 @endsection
-<style>
-/* @media (max-width: 768px) {
-    .nip-column, .email-column {
-        display: none;
-    }
-}
-@media (min-width: 1024px) {
-    th:nth-child(5), td:nth-child(5) {
-      width: 20%; 
-      white-space: nowrap; 
-    }
-} */
-</style>

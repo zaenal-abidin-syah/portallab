@@ -35,9 +35,12 @@
     {{-- @include('layout.partial.sidenav') --}}
     @include('layout.partial.sidenav2')
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
-      @include('layout.partial.headerdosen')
+      {{-- @include('layout.partial.headerdosen') --}}
+      <x-header-wraper></x-header-wraper>
 
-      @yield('content')
+      <x-content-wraper>
+        @yield('content')
+      </x-content-wraper>
 
     </main>
   </body>

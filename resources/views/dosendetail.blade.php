@@ -1,14 +1,14 @@
 @extends('layout.dosen')
 @section('content')
-<div class="w-full px-12 py-6 mx-auto">
+{{-- <div class="w-full px-12 py-6 mx-auto"> --}}
 
   <!-- Header Section -->
-  <div class="md:mb-8 mb-4">
-    <h1 class="text-2xl font-bold text-slate-100 dark:text-white">Detail Informasi Dosen</h1>
+  <div class="">
+    <h1 class="text-xl font-bold text-slate-100 dark:text-white">Detail Informasi Dosen</h1>
     <p class="text-sm text-slate-200 dark:text-slate-100">Informasi lengkap mengenai dosen dan detail akademik.</p>
   </div>
 
-  <div class="flex flex-wrap -mx-3 gap-2 md:gap-3">
+  <div class="flex flex-wrap gap-2 md:gap-3">
     <div class="flex justify-center items-center w-full md:w-4/12 shadow-lg rounded-xl mr-2 bg-white dark:bg-slate-850">
       <div class="w-full">
         <div class="">
@@ -87,5 +87,5 @@
     <!-- End Details Section -->
 
   </div>
-</div>
+{{-- </div> --}}
 @endsection

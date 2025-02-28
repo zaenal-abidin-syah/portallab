@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- cards -->
-<div class="w-full md:px-6 md:py-6 px-2 py-2 mx-auto">
+{{-- <div class="w-full md:px-6 md:py-6 px-2 py-2 mx-auto"> --}}
   <div class="relative w-full mx-auto">
     <div class="relative flex flex-col flex-auto min-w-0 p-2 mx-1 md:p-6 md:mx-3 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl md:shadow-2xl rounded-xl md:rounded-2xl bg-clip-border">
       <div class="flex flex-wrap">
@@ -292,6 +292,6 @@
         </div>
       </div>
     </footer>
-  </div>
+{{-- </div> --}}
   <!-- end cards -->
 @endsection

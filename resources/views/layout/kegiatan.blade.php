@@ -34,7 +34,9 @@
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
     @include('layout.partial.sidenav3')
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
-      @include('layout.partial.headerkegiatan')
+      {{-- @include('layout.partial.headerkegiatan') --}}
+      <x-header-wraper></x-header-wraper>
+
 
       @yield('content')
 
