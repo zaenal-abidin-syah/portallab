@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <x-table-title title="Mata Kuliah"/>
+  <x-table-title idTable="matakuliah" title="Mata Kuliah"/>
   <x-table-wraper idTable="matakuliah-table" title="Daftar Mata Kuliah pada Laboratorium {{ $lab->nama_lab }} untuk Semester {{ $semester }} Tahun Ajaran {{ $tahunAjaran }}">
     <x-slot name="thead">
       <tr>
@@ -84,7 +84,7 @@
     </x-slot>
   </x-table-wraper>
 
-  <x-table-title title="Fasilitas"/>
+  <x-table-title idTable="fasilitas" title="Fasilitas"/>
   <x-table-wraper idTable="fasilitas-table">
     <x-slot name="thead">
       <tr>
@@ -108,7 +108,7 @@
     </x-slot>
   </x-table-wraper>
 
-  <x-table-title title="Publikasi"/>
+  <x-table-title idTable="publikasi" title="Publikasi"/>
   <x-table-wraper idTable="publikasi-table">
     <x-slot name="thead">
       <tr>
@@ -155,7 +155,7 @@
   </x-table-wraper>
 
 
-  <x-table-title title="Buku"/>
+  <x-table-title idTable="buku" title="Buku"/>
   <x-table-wraper idTable="buku-table">
     <x-slot name="thead">
       <tr>
@@ -185,7 +185,7 @@
     </x-slot>
   </x-table-wraper>
 
-  <x-table-title title="Riset"/>
+  <x-table-title idTable="riset" title="Riset"/>
   <x-table-wraper idTable="riset-table">
     <x-slot name="thead">
       <tr>
@@ -214,7 +214,7 @@
   </x-table-wraper>
 
 
-  <x-table-title title="Pengabdian Masyarakat"/>
+  <x-table-title idTable="pengabdian" title="Pengabdian Masyarakat"/>
   <x-table-wraper idTable="pengabdian-table">
     <x-slot name="thead">
       <tr>
@@ -238,7 +238,7 @@
     </x-slot>
   </x-table-wraper>
 
-  <x-table-title title="Kegiatan"/>
+  <x-table-title idTable="kegiatan" title="Kegiatan"/>
   <x-table-wraper idTable="kegiatan-table">
     <x-slot name="thead">
       <tr>

@@ -3,7 +3,7 @@
         <div class="flex flex-wrap -mx-3">
         <div class="flex-none w-auto max-w-full px-3 md:px-5 my-auto">
             <div class="h-full">
-            <h4 id="Matakuliah" class="dark:text-white text-base md:text-xl">{{ $title }}</h4>
+            <h4 id="{{ $idTable }}" class="dark:text-white text-base md:text-xl">{{ $title }}</h4>
             </div>
         </div>
         </div>
