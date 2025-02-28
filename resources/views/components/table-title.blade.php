@@ -3,7 +3,7 @@
         <div class="flex flex-wrap">
         <div class="flex-none w-auto max-w-full px-1 md:px-3 my-auto">
             <div class="h-full">
-            <span id="{{ $idTable }}" class="text-slate-600 font-bold dark:text-white text-sm md:text-base">{{ $title }}</span>
+            <span id="{{ $idTable }}" class="text-slate-700 font-bold dark:text-white text-sm md:text-base">{{ $title }}</span>
             </div>
         </div>
         </div>
