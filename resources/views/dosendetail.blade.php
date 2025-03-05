@@ -1,4 +1,4 @@
-@extends('layout.dosen')
+@extends('layout.dosendetail')
 @section('content')
 {{-- <div class="w-full px-12 py-6 mx-auto"> --}}
 
