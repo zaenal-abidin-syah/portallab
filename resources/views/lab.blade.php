@@ -121,7 +121,7 @@
       @foreach ($publikasi_lab as $publikasi)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($publikasi->judul_publikasi)}}">
+          <td class="judul2-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($publikasi->judul_publikasi)}}">
             {{ucwords($publikasi->judul_publikasi)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -167,7 +167,7 @@
       @foreach ($buku_lab as $buku)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($buku->judul_buku)}}">
+          <td class="judul2-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($buku->judul_buku)}}">
             {{ucwords($buku->judul_buku)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -197,7 +197,7 @@
       @foreach ($riset_lab as $riset)
         <tr class="w-full">
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($riset->judul_riset)}}">
+          <td class="judul2-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($riset->judul_riset)}}">
             {{ucwords($riset->judul_riset)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -225,7 +225,7 @@
       @foreach ($pengabdian_lab as $pengabdian)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($pengabdian->judul_pengabdian)}}">
+          <td class="judul2-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($pengabdian->judul_pengabdian)}}">
             {{ucwords($pengabdian->judul_pengabdian)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">
@@ -251,7 +251,7 @@
       @foreach ($kegiatan_lab as $kegiatan)
         <tr>
           <td class="align-middle border-b dark:border-slate-400 shadow-transparent">{{ $loop->iteration }}</td>
-          <td class="judul-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($kegiatan->nama_kegiatan)}}">
+          <td class="judul2-table align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent" data-judul="{{ucwords($kegiatan->nama_kegiatan)}}">
             {{ucwords($kegiatan->nama_kegiatan)}}
           </td>
           <td class="align-middle border-b dark:border-slate-400 whitespace-nowrap shadow-transparent">

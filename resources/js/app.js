@@ -16,7 +16,7 @@ toggleButton.addEventListener("click", () => {
 
 $(document).ready(function () {
     let tables = $(
-        "#matakuliah-table, #fasilitas-table, #publikasi-table, #buku-table, #riset-table, #pengabdian-table, #kegiatan-table"
+        "#matakuliah-table, #fasilitas-table, #pengabdian-table, #kegiatan-table, #publikasi-table, #buku-table, #riset-table"
     ).DataTable();
 
     truncateText();
@@ -27,42 +27,48 @@ $(document).ready(function () {
     });
 });
 
-// $(document).ready(function () {
-//     $("#fasilitas-table").DataTable();
-// });
-
-// $(document).ready(function () {
-//     $("#publikasi-table").DataTable();
-// });
-// $(document).ready(function () {
-//     $("#buku-table").DataTable();
-// });
-// $(document).ready(function () {
-//     $("#riset-table").DataTable();
-// });
-// $(document).ready(function () {
-//     $("#pengabdian-table").DataTable();
-// });
-// $(document).ready(function () {
-//     $("#kegiatan-table").DataTable();
-// });
-
 function truncateText() {
     document.querySelectorAll(".judul-table").forEach((el) => {
         const fullText = el.getAttribute("data-judul");
         let maxLength;
 
-        if (window.innerWidth < 640) {
+        if (window.innerWidth < 768) {
+            // md
+            maxLength = 80;
+        } else if (window.innerWidth < 992) {
+            // lg
+            maxLength = 100;
+        } else if (window.innerWidth < 1200) {
+            // lg
+            maxLength = 150;
+        }
+
+        el.textContent =
+            fullText.length > maxLength
+                ? fullText.substring(0, maxLength) + "..."
+                : fullText;
+    });
+    document.querySelectorAll(".judul2-table").forEach((el) => {
+        const fullText = el.getAttribute("data-judul");
+        let maxLength;
+
+        if (window.innerWidth < 576) {
             // sm
-            maxLength = 30;
+            maxLength = 18;
         } else if (window.innerWidth < 768) {
             // md
-            maxLength = 60;
-        } else if (window.innerWidth < 1290) {
+            maxLength = 30;
+        } else if (window.innerWidth < 992) {
             // lg
-            maxLength = 90;
+            maxLength = 40;
+        } else if (window.innerWidth < 1200) {
+            // lg
+            maxLength = 65;
+        } else if (window.innerWidth < 1320) {
+            // lg
+            maxLength = 65;
         } else {
-            maxLength = 400;
+            maxLength = 80;
         }
 
         el.textContent =
@@ -71,6 +77,8 @@ function truncateText() {
                 : fullText;
     });
 }
+
+
 
 window.addEventListener("DOMContentLoaded", truncateText);
 window.addEventListener("resize", truncateText);
