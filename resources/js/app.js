@@ -14,7 +14,7 @@ toggleButton.addEventListener("click", () => {
     }
 });
 
-if (window.location.pathname != '/') {
+if (window.location.pathname == '/laboratorium') {
     $(document).ready(function () {
         let tables = $(
             "#matakuliah-table, #fasilitas-table, #pengabdian-table, #kegiatan-table, #publikasi-table, #buku-table, #riset-table"

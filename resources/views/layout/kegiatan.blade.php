@@ -29,7 +29,6 @@
     <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="./assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
     <!-- include('layout.partial.link') -->
   </head>
 
