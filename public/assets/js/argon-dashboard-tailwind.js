@@ -22,8 +22,8 @@ if (!aux.includes("pages")) {
     page = "dashboard";
 }
 
-loadStylesheet(to_build + "assets/css/perfect-scrollbar.css");
-loadJS(to_build + "assets/js/perfect-scrollbar.js", true);
+// loadStylesheet(to_build + "assets/css/perfect-scrollbar.css");
+// loadJS(to_build + "assets/js/perfect-scrollbar.js", true);
 
 // if (document.querySelector("[slider]")) {
 //     loadJS(to_build + "assets/js/carousel.js", true);
@@ -33,18 +33,18 @@ loadJS(to_build + "assets/js/perfect-scrollbar.js", true);
 //     loadJS(to_build + "assets/js/navbar-collapse.js", true);
 // }
 
-if (document.querySelector("[data-target='tooltip']")) {
-    loadJS(to_build + "assets/js/tooltips.js", true);
-    loadStylesheet(to_build + "assets/css/tooltips.css");
-}
+// if (document.querySelector("[data-target='tooltip']")) {
+//     loadJS(to_build + "assets/js/tooltips.js", true);
+//     loadStylesheet(to_build + "assets/css/tooltips.css");
+// }
 
-if (document.querySelector("[nav-pills]")) {
-    loadJS(to_build + "assets/js/nav-pills.js", true);
-}
+// if (document.querySelector("[nav-pills]")) {
+//     loadJS(to_build + "assets/js/nav-pills.js", true);
+// }
 
-if (document.querySelector("[dropdown-trigger]")) {
-    loadJS(to_build + "assets/js/dropdown.js", true);
-}
+// if (document.querySelector("[dropdown-trigger]")) {
+//     loadJS(to_build + "assets/js/dropdown.js", true);
+// }
 
 // if (document.querySelector("[fixed-plugin]")) {
 //   loadJS(to_build + "assets/js/fixed-plugin.js", true);
@@ -80,12 +80,12 @@ function loadJS(FILE_URL, async) {
     document.head.appendChild(dynamicScript);
 }
 
-function loadStylesheet(FILE_URL) {
-    let dynamicStylesheet = document.createElement("link");
+// function loadStylesheet(FILE_URL) {
+//     let dynamicStylesheet = document.createElement("link");
 
-    dynamicStylesheet.setAttribute("href", FILE_URL);
-    dynamicStylesheet.setAttribute("type", "text/css");
-    dynamicStylesheet.setAttribute("rel", "stylesheet");
+//     dynamicStylesheet.setAttribute("href", FILE_URL);
+//     dynamicStylesheet.setAttribute("type", "text/css");
+//     dynamicStylesheet.setAttribute("rel", "stylesheet");
 
-    document.head.appendChild(dynamicStylesheet);
-}
+//     document.head.appendChild(dynamicStylesheet);
+// }
