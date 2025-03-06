@@ -28,9 +28,6 @@ Route::get('/index', function () {
 Route::get('/', function () {
     return view('/index');
 });
-Route::get('/index', function () {
-    return view('index');
-});
 // Route::get('/dosendetail', function () {
 //     return view('dosendetail');
 // });
