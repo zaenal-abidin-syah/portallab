@@ -14,18 +14,20 @@ toggleButton.addEventListener("click", () => {
     }
 });
 
-$(document).ready(function () {
-    let tables = $(
-        "#matakuliah-table, #fasilitas-table, #pengabdian-table, #kegiatan-table, #publikasi-table, #buku-table, #riset-table"
-    ).DataTable();
+if (window.location.pathname != '/') {
+    $(document).ready(function () {
+        let tables = $(
+            "#matakuliah-table, #fasilitas-table, #pengabdian-table, #kegiatan-table, #publikasi-table, #buku-table, #riset-table"
+        ).DataTable();
 
-    truncateText();
-
-    // Jalankan truncateText() setiap kali halaman berubah di semua tabel
-    tables.on("draw.dt", function () {
         truncateText();
+
+        // Jalankan truncateText() setiap kali halaman berubah di semua tabel
+        tables.on("draw.dt", function () {
+            truncateText();
+        });
     });
-});
+}
 
 function truncateText() {
     document.querySelectorAll(".judul-table").forEach((el) => {

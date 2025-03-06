@@ -26,8 +26,12 @@
         document.documentElement.classList.add("dark");
       }
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
+    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @include('layout.partial.link')
+    <!-- include('layout.partial.link') -->
   </head>
 
   <body class="m-0 font-sans antialiased dark:bg-slate-900 leading-default bg-slate-50 text-slate-500">
@@ -44,5 +48,6 @@
 
     </main>
   </body>
-  @include('layout.partial.script')
+  <!-- include('layout.partial.script') -->
+  <script src="./assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
 </html>

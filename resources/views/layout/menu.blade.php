@@ -27,15 +27,12 @@
       }
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-
-    {{-- <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!--Responsive Extension Datatables CSS-->
-	  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet"> --}}
-
     <link rel="stylesheet" href="./assets/css/datatables.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @include('layout.partial.link')
+    <!-- include('layout.partial.link') -->
   </head>
 
   <body class="m-0 font-sans antialiased dark:bg-slate-900 leading-default bg-slate-50 text-slate-500">
@@ -49,12 +46,9 @@
       </x-content-wraper>
 
     </main>
-    @include('layout.partial.script')
+    <!-- include('layout.partial.script') -->
+    <script src="./assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
     <script src="./assets/js/datatables.min.js"></script>
-
-	<!--Datatables -->
-    {{-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script> --}}
 
   </body>
 </html>

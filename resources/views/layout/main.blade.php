@@ -19,16 +19,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+    <!-- <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" /> -->
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
       if (localStorage.getItem("dark-mode") === "true") {
         document.documentElement.classList.add("dark");
       }
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
     <title>LAB Teknik Informatika UTM</title>
-    @include('layout.partial.link')
+    <!-- include('layout.partial.link') -->
  
   </head>
   
