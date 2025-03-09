@@ -9,7 +9,7 @@
   </div>
 
   <div class="flex flex-wrap gap-2 md:gap-3">
-    <div class="flex justify-center items-center w-full md:w-4/12 shadow-lg rounded-xl bg-white dark:bg-slate-850">
+    <div class="flex justify-center items-center w-full md:w-4/12 shadow-lg rounded-sm md:rounded-md bg-white dark:bg-slate-850">
       <div class="w-full">
         <div class="">
           <div class="p-4 md:p-6 text-center flex flex-col items-center">
@@ -26,7 +26,7 @@
 
 
     <!-- Details Section -->
-    <div class="w-full max-w-full md:w-7/12 shadow-lg rounded-xl bg-white dark:bg-slate-850 p-6">
+    <div class="w-full max-w-full md:w-7/12 shadow-lg rounded-sm md:rounded-md bg-white dark:bg-slate-850 p-6">
       <div class="">
         
         <!-- Informasi Dosen -->

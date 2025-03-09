@@ -15,49 +15,49 @@
             <!-- Cards Section -->
             <div class="grid grid-cols-1 md:w-9/12 mx-auto md:grid-cols-6 gap-4">
                 <!-- Card 1 -->
-                <div class="bg-white dark:bg-slate-850 md:col-span-2 shadow-lg dark:shadow-dark-xl rounded-xl p-2 hover:shadow-xl transition flex justify-items-center">
+                <div class="bg-white dark:bg-slate-850 md:col-span-2 shadow-lg dark:shadow-dark-xl rounded-sm md:rounded-md p-2 hover:shadow-xl transition flex justify-items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="teknologi-informasi-dan-aplikasi">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/TIA.png') }}" alt="Lab. Teknologi Informasi dan Aplikasi" class="w-full rounded-xl">
+                            <img src="{{ asset('assets/img/TIA.png') }}" alt="Lab. Teknologi Informasi dan Aplikasi" class="w-full rounded-sm md:rounded-md">
                         </button>
                     </form>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white dark:bg-slate-850 md:col-span-2 shadow-lg  dark:shadow-dark-xl rounded-xl p-2 hover:shadow-xl transition flex justify-items-center">
+                <div class="bg-white dark:bg-slate-850 md:col-span-2 shadow-lg  dark:shadow-dark-xl rounded-sm md:rounded-md p-2 hover:shadow-xl transition flex justify-items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="common-computing">
                         <button type="submit" class="w-full h-full transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/CC.jpeg') }}" alt="Lab. Common Computing" class="w-full rounded-xl object-contain">
+                            <img src="{{ asset('assets/img/CC.jpeg') }}" alt="Lab. Common Computing" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white dark:bg-slate-850 md:col-span-2 shadow-lg dark:shadow-black rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-850 md:col-span-2 shadow-lg dark:shadow-black rounded-sm md:rounded-md p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="multimedia">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/MM.png') }}" alt="Lab. Multimedia Computing" class="w-full rounded-xl object-contain">
+                            <img src="{{ asset('assets/img/MM.png') }}" alt="Lab. Multimedia Computing" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white dark:bg-slate-850 md:col-span-3 shadow-lg dark:shadow-black rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-850 md:col-span-3 shadow-lg dark:shadow-black rounded-sm md:rounded-md p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="sistem-terdistribusi">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/SISTER.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-xl object-contain">
+                            <img src="{{ asset('assets/img/SISTER.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
-                <div class="bg-white dark:bg-slate-850 md:col-span-3 shadow-lg dark:shadow-black rounded-xl p-2 hover:shadow-xl transition flex justify-center items-center">
+                <div class="bg-white dark:bg-slate-850 md:col-span-3 shadow-lg dark:shadow-black rounded-sm md:rounded-md p-2 hover:shadow-xl transition flex justify-center items-center">
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="riset">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/RISET.jpeg') }}" alt="Lab. Riset" class="w-full rounded-xl object-contain">
+                            <img src="{{ asset('assets/img/RISET.jpeg') }}" alt="Lab. Riset" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>

@@ -1,7 +1,7 @@
 @extends('layout.kegiatan')
 @section('content')
-<div class="w-full px-6 py-6 mx-auto">
-    <div class="relative flex flex-col flex-auto min-w-0 p-4 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
+<div class="w-full px-3 py-2 md:px-6 md:py-6 mx-auto">
+    <div class="relative flex flex-col flex-auto min-w-0 p-4 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl rounded-sm md:rounded-md bg-clip-border">
         <div class="flex flex-wrap -mx-3">
             <div class="flex-none w-auto max-w-full px-3 my-auto">
                 <div class="h-full">
@@ -19,7 +19,7 @@
     <div class="flex flex-wrap my-3 -mx-3">
         @foreach($kegiatan->kegiatan_lab_foto as $foto)
         <div class="w-full px-3 mb-6 sm:w-full xl:w-full">
-            <div class="relative flex flex-row justify-center items-start min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border responsive-card">
+            <div class="relative flex flex-row justify-center items-start min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-sm md:rounded-md bg-clip-border responsive-card">
                 <div class="w-1/2 p-4 image-container">
                     <img src="{{ URL::asset('storage/' . $foto->foto) }}" class="w-full shadow-2xl rounded-xl" alt="foto kegiatan">
                 </div>

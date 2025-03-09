@@ -10,7 +10,7 @@
     @foreach($laboratorium as $lab)
     {{-- Card for Laboratory --}}
     <div class="relative w-full mx-auto">
-      <div class="mx-5 mb-5 py-1 px-5 relative flex flex-col min-w-0 overflow-hidden break-words bg-white  shadow-md rounded-md dark:bg-slate-850 dark:shadow-dark-xl">
+      <div class="md:mx-5 mx-2 mb-5 py-1 px-5 relative flex flex-col min-w-0 overflow-hidden break-words bg-white  shadow-md rounded-sm md:rounded-md dark:bg-slate-850 dark:shadow-dark-xl">
         <div class="flex">
           <span id="{{$lab->slug}}" class="text-xxs sm:text-xs md:text-sm font-semibold text-slate-700 dark:text-white">
             Dosen Laboratorium {{$lab->nama_lab}}
@@ -21,7 +21,7 @@
     {{-- Table for Lecturers --}}
     <div class="flex flex-wrap">
       <div class="flex-none w-full">
-        <div class="mx-5 mb-5 p-2 relative flex flex-col shadow-xl bg-white dark:bg-slate-850 rounded-md">
+        <div class="md:mx-5 mx-2 mb-5 p-2 relative flex flex-col shadow-xl bg-white dark:bg-slate-850 rounded-sm md:rounded-md">
           <div class="overflow-hidden">
               <div class="w-full overflow-x-auto">
                 <table class="table-auto w-full text-left text-slate-500 dark:text-white table table-striped table-responsive">
