@@ -44,7 +44,7 @@ class labcontroller extends Controller
             ->whereHas('buku_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
             ->latest()->get();
         // ->paginate(10, ['*'], 'ebooks_page')->withQueryString();
-        $riset_lab = Riset::with('laboratorium')
+        $riset_lab = Riset::with(['laboratorium', 'dosen'])
             ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
             ->latest()->get();
         // ->paginate(10, ['*'], 'researches_page')->withQueryString();

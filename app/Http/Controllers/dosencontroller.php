@@ -24,6 +24,5 @@ class dosencontroller extends Controller
         $dosen = Dosen::with('dosen_jabatan.jabatan')->find($id_dosen);
 
         return view('dosendetail', compact('dosen'));
-        // return view('index');
     }
 }
