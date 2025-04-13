@@ -43,6 +43,20 @@ class KegiatanLabResource extends Resource
     protected static ?string $navigationGroup = 'Kegiatan';
 
     protected static ?int $navigationSort = 2;
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium) {
+            return true;
+        }
+    
+        return false;
+    }
 
     public static function form(Form $form): Form
     {

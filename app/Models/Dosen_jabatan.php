@@ -12,7 +12,12 @@ class Dosen_jabatan extends Model
 {
     use HasFactory;
     protected $table = 'dosen_jabatan';
-    protected $fillable = ['id_dosen', 'id_jabatan', 'dari_tahun', 'sampai_tahun'];
+    protected $fillable = ['id_dosen', 'id_jabatan', 'dari_tahun', 'sampai_tahun', 'id_lab'];
+
+    public function laboratorium(): BelongsTo
+    {
+        return $this->belongsTo(Laboratorium::class, 'id_lab', 'id');
+    }
 
     public function dosen(): BelongsTo
     {

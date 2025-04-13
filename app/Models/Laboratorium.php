@@ -19,7 +19,7 @@ class Laboratorium extends Model
 {
     use HasFactory;
     protected $table = 'laboratorium';
-    protected $fillable = ['nama_lab', 'deskripsi'];
+    protected $fillable = ['nama_lab', 'jenis_lab', 'deskripsi'];
 
     public function pengabdian(): HasMany
     {

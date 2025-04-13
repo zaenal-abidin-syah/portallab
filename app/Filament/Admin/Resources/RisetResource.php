@@ -33,9 +33,22 @@ class RisetResource extends Resource
     protected static ?string $modelLabel = 'Riset';
 
     protected static ?string $navigationGroup = 'Dosen';
-
-
     protected static ?int $navigationSort = 4;
+    
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium && $user->laboratorium->jenis_lab === 'bidang minat') {
+            return true;
+        }
+    
+        return false;
+    }
 
     public static function form(Form $form): Form
     {
@@ -51,26 +64,30 @@ class RisetResource extends Resource
                                     ->label('Tahun')
                                     ->numeric()
                                     ->minValue(date('Y') - 100)
-                                    ->maxValue(date('Y'))
-                                    ->placeholder(date('Y')),
+                                    ->maxValue(date('Y')),
                             ]),
 
 
                         Select::make('id_dosen')
-                            ->label('Dosen')
-                            ->relationship('dosen', 'nama')
+                            ->label('Nama Dosen')
+                            ->options(Dosen::pluck('nama', 'id'))
+                            ->searchable()
                             ->preload()
-                            ->searchable(),
+                            ->required(),
 
                         Select::make('id_lab')
                             ->label('Laboratorium')
                             ->relationship('laboratorium', 'nama_lab', function (Builder $query) {
                                 $userId = auth()->id();
-
+                
                                 if ($userId != 1) {
                                     $idLab = auth()->user()->id_lab;
                                     $query->where('id', $idLab);
                                 }
+                
+                                $query->where('jenis_lab', 'bidang minat');
+                
+                                return $query;
                             })
                             ->preload()
                             ->searchable(),
@@ -88,10 +105,7 @@ class RisetResource extends Resource
                     return $query;
                 } else {
                     $idLab = auth()->user()->id_lab;
-
-                    return $query->whereHas('dosen', function (Builder $risetQuery) use ($idLab) {
-                        $risetQuery->where('id_lab', $idLab);
-                    });
+                    return $query->where('id_lab', $idLab);
                 }
             })
             ->columns([

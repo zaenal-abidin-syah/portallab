@@ -37,6 +37,22 @@ class BukuResource extends Resource
     protected static ?string $navigationGroup = 'Dosen';
 
     protected static ?int $navigationSort = 2;
+    
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium && $user->laboratorium->jenis_lab === 'bidang minat') {
+            return true;
+        }
+    
+        return false;
+    }
+    
 
     public static function form(Form $form): Form
     {
@@ -47,10 +63,12 @@ class BukuResource extends Resource
                         Forms\Components\Grid::make(2)
                             ->schema([
                                 TextInput::make('isbn')
-                                    ->integer()
+                                    ->numeric()
                                     ->required()
+                                    ->minLength(10)
+                                    ->maxLength(13)
                                     ->label('ISBN')
-                                    ->placeholder('13-digit'),
+                                    ->placeholder('10-13 Digit'),
 
                                 TextInput::make('judul_buku')
                                     ->label('Judul')
@@ -60,30 +78,11 @@ class BukuResource extends Resource
                                     ->label('Tahun Terbit')
                                     ->numeric()
                                     ->minValue(date('Y') - 100)
-                                    ->maxValue(date('Y'))
-                                    ->placeholder(date('Y')),
+                                    ->maxValue(date('Y')),
 
                                 TextInput::make('kota')
                                     ->label('Kota Terbit'),
                             ]),
-                    ]),
-
-
-                Section::make('Laboratorium')
-                    ->description('Laboratorium asal penerbitan buku')
-                    ->schema([
-                        Select::make('id_lab')
-                            ->label('')
-                            ->relationship('lab', 'nama_lab', function (Builder $query) {
-                                $userId = auth()->id();
-
-                                if ($userId != 1) {
-                                    $idLab = auth()->user()->id_lab;
-                                    $query->where('id_lab', $idLab);
-                                }
-                            })
-                            ->preload()
-                            ->searchable(),
                     ]),
 
                 Section::make('Penulis')
@@ -102,7 +101,28 @@ class BukuResource extends Resource
                             })
                             ->preload()
                             ->searchable(),
-                    ])
+                    ]),
+
+                Section::make('Laboratorium')
+                    ->description('Laboratorium asal penerbitan buku')
+                    ->schema([
+                        Select::make('id_lab')
+                            ->label('')
+                            ->relationship('lab', 'nama_lab', function (Builder $query) {
+                                $userId = auth()->id();
+                
+                                if ($userId != 1) {
+                                    $idLab = auth()->user()->id_lab;
+                                    $query->where('laboratorium.id', $idLab);
+                                }
+                
+                                $query->where('jenis_lab', 'bidang minat');
+                
+                                return $query;
+                            })
+                            ->preload()
+                            ->searchable(),
+                    ]),
             ]);
     }
 

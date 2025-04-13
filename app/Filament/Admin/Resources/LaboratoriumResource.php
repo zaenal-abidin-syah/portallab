@@ -34,6 +34,20 @@ class LaboratoriumResource extends Resource
     protected static ?string $navigationGroup = 'Laboratorium';
 
     protected static ?int $navigationSort = 1;
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium) {
+            return true;
+        }
+    
+        return false;
+    }
 
     public static function form(Form $form): Form
     {
@@ -41,8 +55,20 @@ class LaboratoriumResource extends Resource
             ->schema([
                 Section::make('Jabatan Laboratorium')
                     ->schema([
-                        TextInput::make('nama_lab')->label('Nama Laboratorium'),
-                        RichEditor::make('deskripsi')->placeholder('Pengenalan Laboratorium')->toolbarButtons([]),
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                            TextInput::make('nama_lab')->label('Nama Laboratorium'),
+                            
+                            Select::make('jenis_lab')
+                            ->label('Jenis Laboratorium')
+                            ->options([
+                                'praktikum' => 'Praktikum',
+                                'bidang minat' => 'Bidang Minat'
+                            ])
+                            ->preload()
+                            
+                        ]),
+                        RichEditor::make('deskripsi')->placeholder('Pengenalan Laboratorium')->toolbarButtons([])
                     ])
             ]);
     }
@@ -65,6 +91,7 @@ class LaboratoriumResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->label('Laboratorium'),
+                TextColumn::make('jenis_lab'),
                 TextColumn::make('deskripsi')
                     ->limit(65)
             ])

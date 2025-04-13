@@ -35,6 +35,21 @@ class PengabdianResource extends Resource
     protected static ?string $navigationGroup = 'Kegiatan';
 
     protected static ?int $navigationSort = 5;
+    
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium && $user->laboratorium->jenis_lab === 'bidang minat') {
+            return true;
+        }
+    
+        return false;
+    }
 
     public static function form(Form $form): Form
     {
@@ -44,7 +59,7 @@ class PengabdianResource extends Resource
                     ->schema([
                         Forms\Components\Grid::make(2)
                             ->schema([
-                                TextInput::make('judul_pengabdian')->label('Nama Kegiatan (Pengabdian)')->required(),
+                                TextInput::make('judul_pengabdian')->label('Judul Kegiatan (Pengabdian)'),
                                 DatePicker::make('tanggal'),
                             ]),
 
@@ -53,11 +68,15 @@ class PengabdianResource extends Resource
                             ->required()
                             ->relationship('laboratorium', 'nama_lab', function (Builder $query) {
                                 $userId = auth()->id();
-
+                
                                 if ($userId != 1) {
                                     $idLab = auth()->user()->id_lab;
                                     $query->where('id', $idLab);
                                 }
+                
+                                $query->where('jenis_lab', 'bidang minat');
+                
+                                return $query;
                             })
                             ->preload()
                             ->searchable()

@@ -38,6 +38,21 @@ class PublikasiResource extends Resource
     protected static ?string $navigationGroup = 'Dosen';
 
     protected static ?int $navigationSort = 3;
+    
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium && $user->laboratorium->jenis_lab === 'bidang minat') {
+            return true;
+        }
+    
+        return false;
+    }
 
     public static function form(Form $form): Form
     {
@@ -54,7 +69,6 @@ class PublikasiResource extends Resource
                                     ->numeric()
                                     ->minValue(date('Y') - 100)
                                     ->maxValue(date('Y'))
-                                    ->placeholder(date('Y'))
                             ]),
 
 
@@ -76,18 +90,22 @@ class PublikasiResource extends Resource
                             ->label('Laboratorium')
                             ->relationship('lab', 'nama_lab', function (Builder $query) {
                                 $userId = auth()->id();
-
+                
                                 if ($userId != 1) {
                                     $idLab = auth()->user()->id_lab;
-                                    $query->where('id_lab', $idLab);
+                                    $query->where('laboratorium.id', $idLab);
                                 }
+                
+                                $query->where('jenis_lab', 'bidang minat');
+                
+                                return $query;
                             })
                             ->preload()
                             ->searchable(),
                     ]),
 
                 Section::make('URL Jurnal')
-                    ->description('Opsional')
+                    ->description('*opsional')
                     ->schema([
                         TextInput::make('link_scopus')->label('Scopus')->placeholder('https://www.example.com'),
                         TextInput::make('link_googleScholar')->label('Google Scholar')->placeholder('https://www.example.com'),

@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\Section;
+
 
 class KegiatanResource extends Resource
 {
@@ -32,13 +34,30 @@ class KegiatanResource extends Resource
     protected static ?string $navigationGroup = 'Kegiatan';
 
     protected static ?int $navigationSort = 1;
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium) {
+            return true;
+        }
+    
+        return false;
+    }
 
     public static function form(Form $form): Form
     {
         return $form
+        ->schema([
+            Section::make('')
             ->schema([
                 TextInput::make('kategori_kegiatan')->label('Kategori Kegiatan (Baru)')->required()
-            ]);
+            ])
+        ]);
     }
 
     public static function table(Table $table): Table

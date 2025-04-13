@@ -20,21 +20,29 @@ class EditBuku extends EditRecord
         $record->update($data);
 
         if (!empty($data['id_lab'])) {
-            $buku_lab = new buku_lab();
-            $buku_lab->id_lab = $data['id_lab'];
-            $buku_lab->id_buku = $record->id;  
-            $buku_lab->save();                  
+            $idLab = is_array($data['id_lab']) ? (int) reset($data['id_lab']) : (int) $data['id_lab'];
+
+            buku_lab::updateOrCreate(
+                ['id_buku' => $record->id], 
+                ['id_lab' => $idLab]
+            );
         }
 
-        if (!empty($data['id_dosen']) && is_array($data['id_dosen'])) {
-            foreach ($data['id_dosen'] as $dosenId) {
-                $buku_penulis = new buku_penulis();
-                $buku_penulis->id_dosen = $dosenId;
-                $buku_penulis->id_buku = $record->id; 
-                $buku_penulis->save();
+        if (!empty($data['id_dosen'])) {
+            $dosenIds = is_array($data['id_dosen']) ? array_map('intval', $data['id_dosen']) : [(int) $data['id_dosen']];
+
+            buku_penulis::where('id_buku', $record->id)->delete();
+
+            foreach ($dosenIds as $dosenId) {
+                buku_penulis::create([
+                    'id_dosen' => $dosenId,
+                    'id_buku' => $record->id
+                ]);
             }
         }
 
         return $record;
     }
+
+
 }

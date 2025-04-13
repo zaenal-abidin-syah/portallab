@@ -19,18 +19,24 @@ class EditPublikasi extends EditRecord
         $record->update($data);
 
         if (!empty($data['id_lab'])) {
-            $publikasi_lab = new publikasi_lab();
-            $publikasi_lab->id_lab = $data['id_lab'];
-            $publikasi_lab->id_publikasi = $record->id;  
-            $publikasi_lab->save();                  
+            $idLab = is_array($data['id_lab']) ? (int) reset($data['id_lab']) : (int) $data['id_lab'];
+
+            publikasi_lab::updateOrCreate(
+                ['id_publikasi' => $record->id], 
+                ['id_lab' => $idLab]
+            );
         }
 
-        if (!empty($data['id_dosen']) && is_array($data['id_dosen'])) {
-            foreach ($data['id_dosen'] as $dosenId) {
-                $publikasi_penulis = new publikasi_penulis();
-                $publikasi_penulis->id_dosen = $dosenId;
-                $publikasi_penulis->id_publikasi = $record->id; 
-                $publikasi_penulis->save();
+        if (!empty($data['id_dosen'])) {
+            $dosenIds = is_array($data['id_dosen']) ? array_map('intval', $data['id_dosen']) : [(int) $data['id_dosen']];
+
+            publikasi_penulis::where('id_publikasi', $record->id)->delete();
+
+            foreach ($dosenIds as $dosenId) {
+                publikasi_penulis::create([
+                    'id_dosen' => $dosenId,
+                    'id_publikasi' => $record->id
+                ]);
             }
         }
 

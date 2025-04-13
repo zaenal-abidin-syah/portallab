@@ -13,7 +13,7 @@ class Riset extends Model
 {
     use HasFactory;
     protected $table = 'riset';
-    protected $fillable = ['judul_riset', 'id_lab', 'tahun'];
+    protected $fillable = ['judul_riset', 'id_lab', 'id_dosen', 'tahun'];
 
     public function laboratorium(): BelongsTo
     {

@@ -42,6 +42,21 @@ class DosenResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        $user = auth()->user();
+    
+        if ($user && $user->id == 1) {
+            return true;
+        }
+    
+        if ($user->laboratorium && $user->laboratorium->jenis_lab === 'bidang minat') {
+            return true;
+        }
+    
+        return false;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -51,9 +66,11 @@ class DosenResource extends Resource
                         Forms\Components\Grid::make(3)
                             ->schema([
                                 TextInput::make('nip')
-                                    ->integer()
+                                    ->numeric()
+                                    ->minLength(10)
+                                    ->maxLength(18)
                                     ->label('NIP')
-                                    ->placeholder('18-digit')
+                                    ->placeholder('10-18 Digit')
                                     ->required(),
 
                                 TextInput::make('nama')
@@ -99,58 +116,27 @@ class DosenResource extends Resource
                         TextInput::make('akun_sinta')->label('SINTA')->placeholder('https://www.example.com'),
                     ]),
 
-                Section::make('Laboratorium')
+                    Section::make('Laboratorium Bidang Minat')
                     ->schema([
                         Select::make('id_lab')
                             ->label('')
                             ->relationship('laboratorium', 'nama_lab', function (Builder $query) {
                                 $userId = auth()->id();
-
-                                if ($userId == 1) {
-                                    $query;
-                                } else {
+                
+                                if ($userId != 1) {
                                     $idLab = auth()->user()->id_lab;
                                     $query->where('id', $idLab);
                                 }
+                
+                                $query->where('jenis_lab', 'bidang minat');
+                
+                                return $query;
                             })
                             ->searchable()
                             ->preload()
                             ->required(),
                     ]),
-
-                Section::make('Jabatan')
-                    ->description('Jabatan dosen pada laboratorium yang bersangkutan')
-                    ->schema([
-                        Repeater::make('dosen_jabatan')
-                            ->relationship('dosen_jabatan')
-                            ->label('')
-                            ->schema(components: [
-                                Select::make('id_jabatan')
-                                    ->label('Jabatan Laboratorium')
-                                    ->relationship('jabatan', 'jabatan')
-                                    ->preload()
-                                    ->searchable(),
-
-                                Forms\Components\Grid::make(2)
-                                    ->schema([
-                                        TextInput::make('dari_tahun')
-                                            ->label('Dari Tahun')
-                                            ->numeric()
-                                            ->minValue(date('Y') - 100)
-                                            ->maxValue(date('Y') + 9)
-                                            ->placeholder(date('Y') - 1),
-
-                                        TextInput::make('sampai_tahun')
-                                            ->label('Sampai Tahun')
-                                            ->numeric()
-                                            ->minValue(date('Y') - 99)
-                                            ->maxValue(date('Y') + 10)
-                                            ->placeholder(date('Y')),
-                                    ])
-                            ])
-                            ->addable(false)
-                            ->deletable(false),
-                    ])
+                
             ]);
     }
 
