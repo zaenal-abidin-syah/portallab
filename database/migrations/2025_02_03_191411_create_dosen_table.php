@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nip', 18)->unique(); // NIP dengan panjang 18 karakter, unik
             $table->string('nama', 255); // Nama
             $table->string('email', 255)->unique();
-            $table->enum('jenjang', ['s1', 's2', 's3'])->nullable(); // Enum jenjang
+            $table->enum('jenjang', ['S1', 'S2', 'S3'])->nullable(); // Enum jenjang
             $table->string('universitas', 255)->nullable(); // Universitas, boleh kosong
             $table->unsignedBigInteger('id_lab')->nullable(); // ID Lab, boleh kosong
             $table->string('akun_scopus', 255)->nullable(); // Akun Scopus, boleh kosong
