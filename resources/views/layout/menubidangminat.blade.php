@@ -26,22 +26,29 @@
         document.documentElement.classList.add("dark");
       }
     </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/datatables.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- include('layout.partial.link') -->
   </head>
 
-  <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-slate-50 text-slate-500">
+  <body class="m-0 font-sans antialiased dark:bg-slate-900 leading-default bg-slate-50 text-slate-500">
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
-    @include('layout.partial.sidenav3')
+    @include('layout.partial.sidenavbidangminat')
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
-      {{-- @include('layout.partial.headerkegiatan') --}}
+      {{-- @include('layout.partial.headermenu') --}}
       <x-header-wraper></x-header-wraper>
-      @yield('content')
+      <x-content-wraper>
+        @yield('content')
+      </x-content-wraper>
 
     </main>
+    <!-- include('layout.partial.script') -->
+    <script src="./assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
+    <script src="./assets/js/datatables.min.js"></script>
+
   </body>
-  <!-- include('layout.partial.script') -->
-  <script src="./assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
 </html>

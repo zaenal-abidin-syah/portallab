@@ -29,68 +29,51 @@ class labcontroller extends Controller
         $slug = $request->input('slug');
         $lab = Laboratorium::where('slug', $slug)->first();
         $id_lab = $lab->id;
-
-        // $lab = Laboratorium::with(['pengabdian', 'riset', 'buku_lab.buku.buku_penulis.dosen', 'publikasi_lab', 'fasilitas_lab', 'kegiatan_lab', 'mata_kuliah'])
-        //     ->find($id_lab);
-
-
-
-        $kepalaLaboratorium = Dosen::with(['laboratorium'])->where('id_lab', $id_lab)
-            ->whereHas('dosen_jabatan', function (Builder $query) {
-                $query->where('id_jabatan', 2);
-            })
-            ->first();
-        $buku_lab = Buku::with(['buku_penulis.dosen', 'buku_lab.laboratorium'])
-            ->whereHas('buku_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->latest()->get();
-        // ->paginate(10, ['*'], 'ebooks_page')->withQueryString();
-        $riset_lab = Riset::with(['laboratorium', 'dosen'])
-            ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
-            ->latest()->get();
-        // ->paginate(10, ['*'], 'researches_page')->withQueryString();
-        $publikasi_lab = Publikasi::with('publikasi_penulis.dosen')
-            ->whereHas('publikasi_penulis.dosen', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->latest()->get();
-        // dd($publikasi_lab);
-        // ->paginate(10, ['*'], 'publications_page')->withQueryString();
-        $fasilitas_lab = Fasilitas::with('fasilitas_lab')
-            ->whereHas('fasilitas_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
-            ->latest()->get();
-        // ->paginate(10, ['*'], 'facilities_page')->withQueryString();
-
-        $bulan = now()->month;
-        $tahun = now()->year;
-
-        if ($bulan >= 2 && $bulan <= 7) {
-            $semester = 'Genap';
-            $tahunAjaran = ($tahun - 1);
-        } else {
-            $semester = 'Ganjil';
-            $tahunAjaran = $tahun;
+        if (!$lab) {
+            return redirect()->back()->with('error', 'Laboratorium tidak ditemukan');
         }
+        $jenis_lab = $lab->jenis_lab;
+        if($jenis_lab == 'praktikum'){
+            $kepalaLaboratorium = Dosen::whereHas("dosen_jabatan", function (Builder $query) use ($id_lab){
+                $query->where('id_lab', $id_lab);
+            })->first();
 
-        $matakuliah_lab = Mata_kuliah::where('id_lab', $id_lab)
+            $bulan = now()->month;
+            $tahun = now()->year;
+
+            if ($bulan >= 2 && $bulan <= 7) {
+                $semester = 'Genap';
+                $tahunAjaran = ($tahun - 1);
+            } else {
+                $semester = 'Ganjil';
+                $tahunAjaran = $tahun;
+            }
+            $matakuliah_lab = Mata_kuliah::where('id_lab', $id_lab)
             ->where('tahun_ajaran_1', strval($tahunAjaran))
             ->where('tahun_ajaran_2', strval($tahunAjaran + 1))
             ->where('semester', $semester)
             ->latest()->get();
-        // ->paginate(10, ['*'], 'courses_page')->withQueryString();
-
-        $pengabdian_lab = Pengabdian::where('id_lab', $id_lab)
+            $fasilitas_lab = Fasilitas::with('fasilitas_lab')
+            ->whereHas('fasilitas_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
             ->latest()->get();
-        // ->paginate(10, ['*'], 'dedications_page')->withQueryString();
-        $kegiatan_lab = Kegiatan_lab::with('kegiatan', 'kegiatan_lab_foto')
+            $kegiatan_lab = Kegiatan_lab::with('kegiatan', 'kegiatan_lab_foto')
             ->latest()
             ->where('id_lab', $id_lab)
             ->latest()->get();
-        // ->whereHas('kegiatan_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
-        // ->paginate(10, ['*'], 'activities_page')->withQueryString();
-        // dd($kegiatan_lab);
-
-        if ($lab) {
-            return view('lab', compact('lab', 'kepalaLaboratorium', 'buku_lab', 'riset_lab', 'publikasi_lab', 'fasilitas_lab', 'matakuliah_lab', 'pengabdian_lab', 'kegiatan_lab', 'semester', 'tahunAjaran'));
-        } else {
-            return redirect()->back()->with('error', 'Laboratorium tidak ditemukan');
+            return view('labpraktikum', compact('lab', 'kepalaLaboratorium', 'fasilitas_lab', 'matakuliah_lab', 'kegiatan_lab', 'semester', 'tahunAjaran'));
         }
+        
+        $buku_lab = Buku::with(['buku_penulis.dosen', 'buku_lab.laboratorium'])
+            ->whereHas('buku_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
+            ->latest()->get();
+        $riset_lab = Riset::with(['laboratorium', 'dosen'])
+            ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
+            ->latest()->get();
+        $publikasi_lab = Publikasi::with('publikasi_penulis.dosen')
+            ->whereHas('publikasi_penulis.dosen', fn(Builder $query) => $query->where('id_lab', $id_lab))
+            ->latest()->get();
+        $pengabdian_lab = Pengabdian::where('id_lab', $id_lab)
+            ->latest()->get();
+        return view('labbidangminat', compact('lab', 'buku_lab', 'riset_lab', 'publikasi_lab', 'pengabdian_lab'));
     }
 }

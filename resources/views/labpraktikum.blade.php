@@ -1,4 +1,4 @@
-@extends('layout.menu')
+@extends('layout.menupraktikum')
 @section('content')
 
 <!-- cards -->

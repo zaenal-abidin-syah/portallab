@@ -75,11 +75,12 @@
           </div>
         </div>
         <!-- Jabatan -->
-        <h2 class="text-sm md:text-base font-bold text-slate-750 dark:text-white my-2">Jabatan</h2>
+        <h2 class="text-sm md:text-base font-bold text-slate-750 dark:text-white my-2">Bidang Minat</h2>
         <div>
-          <span class="block text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-100">Jabatan Terakhir</span>
+          {{-- <span class="block text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-100">Jabatan Terakhir</span> --}}
           <span class="text-xxs  md:text-xs mt-1 block w-full rounded-md border-none text-slate-700 dark:text-slate-200">
-            {{ $dosen->jabatanTerakhir ? $dosen->jabatanTerakhir->jabatan->jabatan : 'Tidak Ada Jabatan' }}
+            {{-- {{ $dosen->jabatanTerakhir ? $dosen->jabatanTerakhir->jabatan->jabatan : 'Tidak Ada Jabatan' }} --}}
+            {{ $dosen->laboratorium->nama_lab }}
           </span>
         </div>
       </div>
