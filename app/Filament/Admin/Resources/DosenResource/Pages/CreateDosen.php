@@ -7,7 +7,7 @@ use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\dosen_jabatan;
+use App\Models\Dosen_jabatan;
 
 class CreateDosen extends CreateRecord
 {

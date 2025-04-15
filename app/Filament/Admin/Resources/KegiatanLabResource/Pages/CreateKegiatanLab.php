@@ -7,7 +7,7 @@ use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\kegiatan_lab_foto;
+use App\Models\Kegiatan_lab_foto;
 
 class CreateKegiatanLab extends CreateRecord
 {

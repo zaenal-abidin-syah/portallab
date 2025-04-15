@@ -7,8 +7,8 @@ use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\publikasi_lab;
-use App\Models\publikasi_penulis;
+use App\Models\Publikasi_lab;
+use App\Models\Publikasi_penulis;
 
 class CreatePublikasi extends CreateRecord
 {
@@ -20,7 +20,7 @@ class CreatePublikasi extends CreateRecord
         $record = static::getModel()::create($data);
 
         if (!empty($data['id_lab'])) {
-            $publikasi_lab = new publikasi_lab();
+            $publikasi_lab = new Publikasi_lab();
             $publikasi_lab->id_lab = $data['id_lab'];
             $publikasi_lab->id_publikasi = $record->id;  
             $publikasi_lab->save();                  
@@ -28,7 +28,7 @@ class CreatePublikasi extends CreateRecord
 
         if (!empty($data['id_dosen']) && is_array($data['id_dosen'])) {
             foreach ($data['id_dosen'] as $dosenId) {
-                $publikasi_penulis = new publikasi_penulis();
+                $publikasi_penulis = new Publikasi_penulis();
                 $publikasi_penulis->id_dosen = $dosenId;
                 $publikasi_penulis->id_publikasi = $record->id; 
                 $publikasi_penulis->save();

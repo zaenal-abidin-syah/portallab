@@ -30,7 +30,7 @@ use Filament\Forms\Components\Repeater;
 
 class DosenResource extends Resource
 {
-    protected static ?string $model = dosen::class;
+    protected static ?string $model = Dosen::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 

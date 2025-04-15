@@ -56,17 +56,17 @@ class labcontroller extends Controller
             $fasilitas_lab = Fasilitas::with('fasilitas_lab')
             ->whereHas('fasilitas_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
             ->latest()->get();
-            $kegiatan_lab = Kegiatan_lab::with('kegiatan', 'kegiatan_lab_foto')
+            $kegiatan_lab = Kegiatan_lab::with('kegiatan')
             ->latest()
             ->where('id_lab', $id_lab)
             ->latest()->get();
             return view('labpraktikum', compact('lab', 'kepalaLaboratorium', 'fasilitas_lab', 'matakuliah_lab', 'kegiatan_lab', 'semester', 'tahunAjaran'));
         }
         
-        $buku_lab = Buku::with(['buku_penulis.dosen', 'buku_lab.laboratorium'])
+        $buku_lab = Buku::with(['buku_penulis.dosen'])
             ->whereHas('buku_lab', fn(Builder $query) => $query->where('id_lab', $id_lab))
             ->latest()->get();
-        $riset_lab = Riset::with(['laboratorium', 'dosen'])
+        $riset_lab = Riset::with(['dosen'])
             ->whereHas('laboratorium', fn(Builder $query) => $query->where('id', $id_lab))
             ->latest()->get();
         $publikasi_lab = Publikasi::with('publikasi_penulis.dosen')

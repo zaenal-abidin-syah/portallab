@@ -7,7 +7,7 @@ use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\dosen_jabatan;
+use App\Models\Dosen_jabatan;
 
 class EditDosen extends EditRecord
 {

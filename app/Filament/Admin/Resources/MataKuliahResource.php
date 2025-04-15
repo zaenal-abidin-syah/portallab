@@ -23,7 +23,7 @@ use Filament\Forms\Components\Section;
 
 class MataKuliahResource extends Resource
 {
-    protected static ?string $model = mata_kuliah::class;
+    protected static ?string $model = Mata_kuliah::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
