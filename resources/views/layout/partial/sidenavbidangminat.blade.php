@@ -6,7 +6,7 @@
   <x-sidenav-menu hrefLink="/dosen" logoColor="text-blue-500" sidenavLogo="ni ni-paper-diploma">
     Daftar Dosen
   </x-sidenav-menu>
-  <x-sidenav-header-menu>Laboratorium</x-sidenav-header-menu>
+  <x-sidenav-header-menu>Bidang Minat</x-sidenav-header-menu>
   <x-sidenav-menu hrefLink="#lab" logoColor="text-blue-500" sidenavLogo="ni ni-tv-2">
     Profile Laboratorium
   </x-sidenav-menu>
