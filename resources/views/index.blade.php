@@ -5,11 +5,11 @@
 <div class="w-full h-screen flex flex-col justify-around px-4 py-4 mx-auto bg-slate-100 dark:bg-slate-900">
     <div class="flex justify-center items-center">
         <!-- Main Content Section -->
-        <div class="w-full px-2 flex flex-col gap-3 justify-between">
+        <div class="w-full px-2 flex flex-col gap-1 justify-between">
             <!-- Title Section -->
-            <div class="text-center mb-4">
+            <div class="text-center">
                 <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-700">Laboratorium Teknik Informatika UTM</h1>
-                <p class="text-slate-700 dark:text-slate-50 text-sm">Lab Praktikum</p>
+                <p class="text-slate-700 dark:text-slate-50 text-xl font-bold">Laboratorium Praktikum</p>
             </div>
 
             <!-- Cards Section -->
@@ -46,8 +46,8 @@
             </div>
             <!-- End Cards Section -->
              <!-- Title Section -->
-            <div class="text-center mb-4">
-                <p class="text-slate-700 dark:text-slate-50 text-sm">Lab Bidang Minat</p>
+            <div class="text-center">
+                <p class="text-slate-700 dark:text-slate-50 text-xl font-bold">Laboratorium Bidang Minat</p>
             </div>
             <!-- Cards Section -->
             <div class="grid grid-cols-1 md:w-9/12 mx-auto md:grid-cols-12 gap-4"> <!-- md:grid-cols-12 untuk 4 lab jadi sebaris vertical -->
