@@ -47,7 +47,7 @@
             <!-- End Cards Section -->
              <!-- Title Section -->
             <div class="text-center">
-                <p class="text-slate-700 dark:text-slate-50 text-xl font-bold">Laboratorium Bidang Minat</p>
+                <p class="text-slate-700 dark:text-slate-50 text-xl font-bold mt-2">Laboratorium Bidang Minat</p>
             </div>
             <!-- Cards Section -->
             <div class="grid grid-cols-1 md:w-9/12 mx-auto md:grid-cols-12 gap-4"> <!-- md:grid-cols-12 untuk 4 lab jadi sebaris vertical -->
