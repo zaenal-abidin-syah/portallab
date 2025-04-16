@@ -19,7 +19,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="teknologi-informasi-dan-aplikasi">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-35-md.png') }}" alt="Lab. Teknologi Informasi dan Aplikasi" class="w-full rounded-sm md:rounded-md">
+                            <img src="{{ asset('assets/img/Frame-35-sm.png') }}" alt="Lab. Teknologi Informasi dan Aplikasi" class="w-full rounded-sm md:rounded-md">
                         </button>
                     </form>
                 </div>
@@ -29,7 +29,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="common-computing">
                         <button type="submit" class="w-full h-full transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-40-md.png') }}" alt="Lab. Common Computing" class="w-full rounded-sm md:rounded-md object-contain">
+                            <img src="{{ asset('assets/img/Frame-40-sm.png') }}" alt="Lab. Common Computing" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
@@ -39,7 +39,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="multimedia">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-34-md.png') }}" alt="Lab. Multimedia Computing" class="w-full rounded-sm md:rounded-md object-contain">
+                            <img src="{{ asset('assets/img/Frame-34-sm.png') }}" alt="Lab. Multimedia Computing" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
@@ -56,7 +56,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="kecerdasan-komputasi">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-32-md.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-sm md:rounded-md object-contain">
+                            <img src="{{ asset('assets/img/Frame-32-sm.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
@@ -64,7 +64,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="teknologi-perangkat-lunak">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-33-md.png') }}" alt="Lab. Riset" class="w-full rounded-sm md:rounded-md object-contain">
+                            <img src="{{ asset('assets/img/Frame-33-sm.png') }}" alt="Lab. Riset" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
@@ -72,7 +72,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="sistem-terdistribusi-dan-jaringan">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-37-md.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-sm md:rounded-md object-contain">
+                            <img src="{{ asset('assets/img/Frame-37-sm.png') }}" alt="Lab. Sistem Terdistribusi" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
@@ -80,7 +80,7 @@
                     <form action="{{ route('lab') }}" method="GET" class="text-center m-0 flex justify-items-center">
                         <input type="hidden" class="hidden" name="slug" value="komputasi-bahasa-alami">
                         <button type="submit" class="w-full h-full m-auto transition-transform duration-300 ease-in-out hover:scale-y-110 hover:scale-x-105">
-                            <img src="{{ asset('assets/img/Frame-38-md.png') }}" alt="Lab. Riset" class="w-full rounded-sm md:rounded-md object-contain">
+                            <img src="{{ asset('assets/img/Frame-38-sm.png') }}" alt="Lab. Riset" class="w-full rounded-sm md:rounded-md object-contain">
                         </button>
                     </form>
                 </div>
