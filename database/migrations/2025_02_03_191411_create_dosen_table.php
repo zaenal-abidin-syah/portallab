@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_lab')->nullable(); // ID Lab, boleh kosong
             $table->string('akun_scopus', 255)->nullable(); // Akun Scopus, boleh kosong
             $table->string('akun_googleScholar', 255)->nullable(); // Akun Google Scholar, boleh kosong
+            $table->string('akun_garuda', 255)->nullable(); // Akun Google Scholar, boleh kosong
             $table->string('akun_sinta', 255)->nullable(); // Akun Sinta, boleh kosong
             $table->string('foto', 255)->nullable(); // Foto dalam format BLOB, boleh kosong
             $table->timestamp('created_at')->useCurrent(); // Default pakai CURRENT_TIMESTAMP

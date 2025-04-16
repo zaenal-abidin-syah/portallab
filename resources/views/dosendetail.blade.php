@@ -71,7 +71,7 @@
           </div>
           <div class="flex justify-start items-center">
             {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Garuda</span> --}}
-            <a href="{{ $dosen->akun_googleScholar }}" class="garuda-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Garuda</a>
+            <a href="{{ $dosen->akun_garuda }}" class="garuda-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Garuda</a>
           </div>
         </div>
         <!-- Jabatan -->
