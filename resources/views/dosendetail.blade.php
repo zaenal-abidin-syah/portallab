@@ -60,19 +60,41 @@
         </div>
 
         <h2 class="text-sm md:text-base font-bold text-slate-750 dark:text-white my-2">Akun Akademik</h2>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="flex justify-start items-center">
-            {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Scopus</span> --}}
-            <a href="{{ $dosen->akun_scopus }}" class="scopus-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Scopus</a>
-          </div>
-          <div class="flex justify-start items-center">
-            {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Google Scholar</span> --}}
-            <a href="{{ $dosen->akun_googleScholar }}" class="gscholar-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Scholar</a>
-          </div>
-          <div class="flex justify-start items-center">
-            {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Garuda</span> --}}
-            <a href="{{ $dosen->akun_garuda }}" class="garuda-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Garuda</a>
-          </div>
+        @php
+            $accounts = [
+                'Scopus'        => $dosen->akun_scopus,
+                'Scholar'       => $dosen->akun_googleScholar,
+                'Garuda'        => $dosen->akun_garuda,
+                'Sinta'         => $dosen->akun_sinta,
+            ];
+            $available = array_filter($accounts);
+            $colCount = count($available) ?: 1; 
+        @endphp
+        <div class="grid grid-cols-{{ $colCount }} gap-2">
+          @if ($dosen->akun_scopus)
+            <div class="flex justify-start items-center">
+              {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Scopus</span> --}}
+              <a href="{{ $dosen->akun_scopus }}" class="scopus-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Scopus</a>
+            </div>
+          @endif
+          @if ($dosen->akun_googleScholar)
+            <div class="flex justify-start items-center">
+              {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Google Scholar</span> --}}
+              <a href="{{ $dosen->akun_googleScholar }}" class="gscholar-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Scholar</a>
+            </div>
+          @endif
+          @if ($dosen->akun_garuda)
+            <div class="flex justify-start items-center">
+              {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Garuda</span> --}}
+              <a href="{{ $dosen->akun_garuda }}" class="garuda-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Garuda</a>
+            </div>
+          @endif
+          @if ($dosen->akun_sinta)
+            <div class="flex justify-start items-center">
+              {{-- <span class="block text-xs  md:text-sm font-medium text-slate-700 dark:text-slate-200">Garuda</span> --}}
+              <a href="{{ $dosen->akun_sinta }}" class="sinta-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Sinta</a>
+            </div>
+          @endif
         </div>
         <!-- Jabatan -->
         <h2 class="text-sm md:text-base font-bold text-slate-750 dark:text-white my-2">Bidang Minat</h2>

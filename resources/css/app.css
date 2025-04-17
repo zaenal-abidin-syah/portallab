@@ -3,14 +3,17 @@
 @import "tailwindcss/utilities";
 
 .gscholar-button {
-    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 rounded-lg text-center;
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-sky-400 via-sky-600 to-sky-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 rounded-lg text-center;
 }
 
 .scopus-button {
-    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 rounded-lg text-center;
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 rounded-lg text-center;
 }
 .garuda-button {
-    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-center;
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-red-400 via-red-500 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-center;
+}
+.sinta-button {
+    @apply text-xxs sm:text-xs md:text-sm text-white bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg text-center;
 }
 
 table.dataTable th.dt-type-numeric,
