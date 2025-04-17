@@ -44,3 +44,10 @@ table.dataTable > tbody > tr > th {
 table.dataTable > thead > th {
     @apply text-xs sm:text-sm md:text-base !important;
 }
+
+.gddd {
+    @apply grid-cols-3;
+}
+.gddd2 {
+    @apply grid-cols-4;
+}

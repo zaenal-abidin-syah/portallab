@@ -46,22 +46,22 @@
         @endphp
         <div class="grid grid-cols-{{ $colCount }} gap-2">
           @if ($dosen->akun_scopus)
-            <div class="flex justify-start items-center">
+            <div class="flex col-span-1 justify-start items-center">
               <a href="{{ $dosen->akun_scopus }}" class="scopus-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Scopus</a>
             </div>
           @endif
           @if ($dosen->akun_googleScholar)
-            <div class="flex justify-start items-center">
+            <div class="flex col-span-1 justify-start items-center">
               <a href="{{ $dosen->akun_googleScholar }}" class="gscholar-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Scholar</a>
             </div>
           @endif
           @if ($dosen->akun_garuda)
-            <div class="flex justify-start items-center">
+            <div class="flex col-span-1 justify-start items-center">
               <a href="{{ $dosen->akun_garuda }}" class="garuda-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Garuda</a>
             </div>
           @endif
           @if ($dosen->akun_sinta)
-            <div class="flex justify-start items-center">
+            <div class="flex col-span-1 justify-start items-center">
               <a href="{{ $dosen->akun_sinta }}" class="sinta-button text-xxs md:text-xs md:py-2 py-2 w-9/10">Sinta</a>
             </div>
           @endif
