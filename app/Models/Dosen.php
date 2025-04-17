@@ -16,7 +16,7 @@ class Dosen extends Model
 {
     use HasFactory;
     protected $table = 'dosen';
-    protected $fillable = ['nip', 'nama', 'email', 'jenjang', 'id_lab', 'universitas', 'akun_scopus', 'akun_googleScholar', 'akun_sinta', 'foto'];
+    protected $fillable = ['nip', 'nama', 'email', 'jenjang', 'id_lab', 'universitas', 'akun_scopus', 'akun_googleScholar', 'akun_garuda', 'akun_sinta', 'foto'];
 
     public function laboratorium(): BelongsTo
     {

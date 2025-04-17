@@ -1,58 +1,62 @@
 <x-filament::page>
     <style>
-        .lab-name{
-            font-size: 20px;
-            font-weight: bold;
-            width: 200px;
-            padding: 20px;
-        }
-        .tab-m{
-            margin-top: 40px;
+        .tab-m {
+            margin-top: 20px;
             margin-bottom: 20px;
         }
-        .tab-m-s{
+
+        .tab-m-s {
             margin-top: 20px;
+        }
+
+        .lab-box {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            min-width: 150px;
+            text-align: center;
         }
     </style>
 
     <div>
-        <hr style="height: 3px;">
+        <hr class="h-[3px] bg-gray-300 dark:bg-gray-700 border-0">
 
         @if(auth()->user()->id == 1)
-            <div class="tab-m-s" style="text-align: center;">
-                <div class="lab-name border">
+            <div class="tab-m-s">
+                <div class="lab-box inline-block border border-gray-200">
                     SUPER ADMIN
                 </div>
             </div>
             <br>
-            <p style="font-weight: bold;">DESKRIPSI FITUR SUPER ADMIN</p>
-            
-        @elseif(auth()->user()->laboratorium->jenis_lab=='praktikum')
-            <div class="tab-m">
-                <span class="lab-name border">
-                    LAB {{strtoupper(auth()->user()->laboratorium->jenis_lab)}}
+            <p class="font-bold">DESKRIPSI FITUR SUPER ADMIN</p>
+
+        @elseif(auth()->user()->laboratorium->jenis_lab == 'praktikum')
+            <div class="tab-m flex flex-wrap justify-start gap-4">
+                <span class="lab-box border border-gray-200">
+                    LAB {{ strtoupper(auth()->user()->laboratorium->jenis_lab) }}
                 </span>
-                <span class="lab-name border">
-                    {{strtoupper(auth()->user()->laboratorium->nama_lab)}}
-                </span>
-            </div>
-            <br>
-            <p style="font-weight: bold;">DESKRIPSI FITUR LAB PRAKTIKUM</p>
-            
-        @elseif(auth()->user()->laboratorium->jenis_lab=='bidang minat')
-            <div class="tab-m">
-                <span class="lab-name border">
-                    LAB {{strtoupper(auth()->user()->laboratorium->jenis_lab)}}
-                </span>
-                <span class="lab-name border">
-                    {{strtoupper(auth()->user()->laboratorium->nama_lab)}}
+                <span class="lab-box border border-gray-200">
+                    {{ strtoupper(auth()->user()->laboratorium->nama_lab) }}
                 </span>
             </div>
             <br>
-            <p style="font-weight: bold;">DESKRIPSI FITUR LAB BIDANG MINAT</p>
+            <p class="font-bold">DESKRIPSI FITUR LAB PRAKTIKUM</p>
+
+        @elseif(auth()->user()->laboratorium->jenis_lab == 'bidang minat')
+            <div class="tab-m flex flex-wrap justify-start gap-4">
+                <span class="lab-box border border-gray-200">
+                    LAB {{ strtoupper(auth()->user()->laboratorium->jenis_lab) }}
+                </span>
+                <span class="lab-box border border-gray-200">
+                    {{ strtoupper(auth()->user()->laboratorium->nama_lab) }}
+                </span>
+            </div>
+            <br>
+            <p class="font-bold">DESKRIPSI FITUR LAB BIDANG MINAT</p>
         @endif
-        
+
         <br>
+
         <table class="table-auto w-full border-collapse border border-gray-200">
         
 {{-- SUPER ADMIN --}}

@@ -113,10 +113,11 @@ class DosenResource extends Resource
                     ->schema([
                         TextInput::make('akun_scopus')->label('Scopus')->placeholder('https://www.example.com'),
                         TextInput::make('akun_googleScholar')->label('Google Scholar')->placeholder('https://www.example.com'),
+                        TextInput::make('akun_garuda')->label('Garuda')->placeholder('https://www.example.com'),
                         TextInput::make('akun_sinta')->label('SINTA')->placeholder('https://www.example.com'),
                     ]),
 
-                    Section::make('Laboratorium Bidang Minat')
+                    Section::make('Bidang Keahlian (Laboratorium Minat)')
                     ->schema([
                         Select::make('id_lab')
                             ->label('')
